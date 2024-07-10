@@ -1,0 +1,5 @@
+Flask
+python-dotenv
+openai==0.28
+sqlalchemy
+flask-sqlalchemy
