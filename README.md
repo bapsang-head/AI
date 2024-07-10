@@ -11,7 +11,7 @@
 
 Flask를 통해서 간단한 예제를 GPT 3.5 turbo를 통해 응답을 생성하는 과정을 성공
 
-#### 입력 예시
+#### 입력과 응답 예시
 
 ```json
 {
@@ -31,3 +31,37 @@ Flask를 통해서 간단한 예제를 GPT 3.5 turbo를 통해 응답을 생성�
         {"index": 11, "word": "먹었어", "tag": "O"}
     ]
 }
+
+{
+    {
+        "entities": {
+            "FOOD": "김치찌개",
+            "GRAM_QTY": 800.0,
+            "QTY": "두",
+            "UNIT": "그릇"
+        },
+        "nutrition_info": {
+            "calories": 150,
+            "carbohydrates": 20.0,
+            "fat": 5.0,
+            "protein": 8.0
+        },
+        "task_id": "task_1"
+    },
+    {
+        "entities": {
+            "FOOD": "치킨",
+            "GRAM_QTY": 4500.0,
+            "QTY": "세",
+            "UNIT": "조각"
+        },
+        "nutrition_info": {
+            "calories": 250,
+            "carbohydrates": 5,
+            "fat": 15,
+            "protein": 20
+        },
+        "task_id": "task_2"
+    }
+}
+
