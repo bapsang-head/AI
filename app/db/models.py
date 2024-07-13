@@ -1,20 +1,19 @@
-from app.db import db
+from sqlalchemy import Column, Integer, String, Float, UniqueConstraint
+from app.db import db, Base
 
-class NutritionInfo(db.Model):
-    """
-    영양 정보 모델을 정의합니다.
-    """
-    id = db.Column(db.Integer, primary_key=True)  # 고유 ID
-    food = db.Column(db.String(50), unique=True, nullable=False)  # 음식 이름
-    calories = db.Column(db.Integer, nullable=False)  # 칼로리
-    protein = db.Column(db.Float, nullable=False)  # 단백질
-    fat = db.Column(db.Float, nullable=False)  # 지방
-    carbohydrates = db.Column(db.Float, nullable=False)  # 탄수화물
+class NutritionInfo(Base):
+    __tablename__ = 'nutrition_info'
+    id = Column(Integer, primary_key=True)
+    food = Column(String(50), unique=True, nullable=False)
+    calories = Column(Integer, nullable=False)
+    protein = Column(Float, nullable=False)
+    fat = Column(Float, nullable=False)
+    carbohydrates = Column(Float, nullable=False)
 
-class UnitConversion(db.Model):
-    """
-    단위 변환 정보를 정의합니다.
-    """
-    id = db.Column(db.Integer, primary_key=True)  # 고유 ID
-    unit = db.Column(db.String(50), unique=True, nullable=False)  # 단위 이름
-    grams = db.Column(db.Float, nullable=False)  # 단위 당 그램 수
+class UnitConversion(Base):
+    __tablename__ = 'unit_conversion'
+    id = Column(Integer, primary_key=True)
+    food = Column(String, nullable=False)
+    unit = Column(String, nullable=False)
+    grams = Column(Float, nullable=False)
+    __table_args__ = (UniqueConstraint('food', 'unit', name='_food_unit_uc'),)
