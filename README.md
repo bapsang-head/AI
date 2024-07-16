@@ -35,7 +35,6 @@
 - NER 모델이 잡아내지 못한 부분까지 잡아내는 응답을 만들어낸다.
     ```json
     {
-        "user_input": "나는 점심에 김치찌개를 두 그릇과 치킨 세조각을 먹었어",
         "data": [
             {"index": 1, "word": "김치찌개", "tag": "B-FOOD"},
             {"index": 2, "word": "두", "tag": "B-QTY"},
@@ -63,18 +62,25 @@
     ``` 
 
 ##### 2. 응답
-- 단위당 g으로 변환된 값과 영양정보를 응답으로 보여준다. (영양정보는 100g을 기준으로 보여준다.)
+- 단위당 g으로 변환된 값과 영양정보를 응답으로 보여준다. 
+- 영양정보는 100g을 기준으로 보여준다. (칼로리, 탄수화물, 단백질, 지방)
     ```json
     {
         "data": [
             {"index": 1, "word": "김치찌개", "tag": "B-FOOD"},
             {"index": 2, "word": "그릇", "tag": "B-UNIT"},
             {"index": 3, "word": "200", "tag": "gram"},
-            ... (영양정보)
-            {"index": 4, "word": "치킨", "tag": "B-FOOD"},
-            {"index": 5, "word": "조각", "tag": "B-UNIT"},
-            {"index": 6, "word": "150", "tag": "gram"},
-            ... (영양정보)
+            {"index": 4, "word": "200", "tag": "calories"},
+            {"index": 5, "word": "50", "tag": "carbohydrates"},
+            {"index": 6, "word": "20", "tag": "protein"},
+            {"index": 7, "word": "10", "tag": "fat"},
+            {"index": 8, "word": "치킨", "tag": "B-FOOD"},
+            {"index": 9, "word": "조각", "tag": "B-UNIT"},
+            {"index": 10, "word": "150", "tag": "gram"},
+            {"index": 11, "word": "200", "tag": "calories"},
+            {"index": 12, "word": "50", "tag": "carbohydrates"},
+            {"index": 13, "word": "100", "tag": "protein"},
+            {"index": 14, "word": "20", "tag": "fat"},
         ]
     }
     ``` 
