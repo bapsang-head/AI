@@ -19,14 +19,15 @@
 
     ```json
     {
-        "user_input": "나는 점심에 김치찌개를 두 그릇과 치킨 세조각을 먹었어",
+        "user_input": "나는 점심에 삽겹살을 2 인분과 소주을 먹었어. 밥도 3공기 볶아 먹었어",
         "data": [
-            {"index": 1, "word": "김치찌개", "tag": "B-FOOD"},
-            {"index": 2, "word": "두", "tag": "B-QTY"},
-            {"index": 3, "word": "그릇", "tag": "B-UNIT"},
-            {"index": 4, "word": "치킨", "tag": "B-FOOD"},
-            {"index": 5, "word": "세", "tag": "B-QTY"},
-            {"index": 6, "word": "조각", "tag": "B-UNIT"},
+            {"index": 1, "word": "삽겹살", "tag": "B-FOOD"},
+            {"index": 2, "word": "2", "tag": "B-QTY"},
+            {"index": 3, "word": "인분", "tag": "B-UNIT"},
+            {"index": 4, "word": "소주", "tag": "B-FOOD"},
+            {"index": 5, "word": "밥", "tag": "B-FOOD"},
+            {"index": 6, "word": "3", "tag": "B-QTY"},
+            {"index": 7, "word": "공기", "tag": "B-UNIT"}
         ]
     }
     ``` 
@@ -36,12 +37,15 @@
     ```json
     {
         "data": [
-            {"index": 1, "word": "김치찌개", "tag": "B-FOOD"},
-            {"index": 2, "word": "두", "tag": "B-QTY"},
-            {"index": 3, "word": "그릇", "tag": "B-UNIT"},
-            {"index": 4, "word": "치킨", "tag": "B-FOOD"},
-            {"index": 5, "word": "세", "tag": "B-QTY"},
-            {"index": 6, "word": "조각", "tag": "B-UNIT"},
+            {"index": 1, "word": "삽겹살", "tag": "B-FOOD"},
+            {"index": 2, "word": "2", "tag": "B-QTY"},
+            {"index": 3, "word": "인분", "tag": "B-UNIT"},
+            {"index": 4, "word": "소주", "tag": "B-FOOD"},
+            {"index": 5, "word": "Null", "tag": "B-QTY"},
+            {"index": 6, "word": "Null", "tag": "B-UNIT"},
+            {"index": 7, "word": "볶음밥", "tag": "B-FOOD"},
+            {"index": 8, "word": "3", "tag": "B-QTY"},
+            {"index": 9, "word": "공기", "tag": "B-UNIT"}
         ]
     }
     ``` 
@@ -50,13 +54,14 @@
 
 #### 1. 입력
 - 음식, 단위 정보가 DB에 없는 경우 호출하는 경우이다.
+- 무조건 음식명과 단위를 전부 넘겨줘야 한다.
     ```json
     {
         "data": [
-            {"index": 1, "word": "김치찌개", "tag": "B-FOOD"},
-            {"index": 2, "word": "그릇", "tag": "B-UNIT"},
-            {"index": 3, "word": "치킨", "tag": "B-FOOD"},
-            {"index": 4, "word": "조각", "tag": "B-UNIT"},
+            {"index": 1, "word": "삽겹살", "tag": "B-FOOD"},
+            {"index": 2, "word": "인분", "tag": "B-UNIT"},
+            {"index": 3, "word": "볶음밥", "tag": "B-FOOD"},
+            {"index": 4, "word": "공기", "tag": "B-UNIT"},
         ]
     }
     ``` 
@@ -64,18 +69,19 @@
 ##### 2. 응답
 - 단위당 g으로 변환된 값과 영양정보를 응답으로 보여준다. 
 - 영양정보는 100g을 기준으로 보여준다. (칼로리, 탄수화물, 단백질, 지방)
+- 한 음식당 7개의 정보를 가지고 온다.
     ```json
     {
         "data": [
-            {"index": 1, "word": "김치찌개", "tag": "B-FOOD"},
-            {"index": 2, "word": "그릇", "tag": "B-UNIT"},
+            {"index": 1, "word": "삽겹살", "tag": "B-FOOD"},
+            {"index": 2, "word": "인분", "tag": "B-UNIT"},
             {"index": 3, "word": "200", "tag": "gram"},
             {"index": 4, "word": "200", "tag": "calories"},
             {"index": 5, "word": "50", "tag": "carbohydrates"},
             {"index": 6, "word": "20", "tag": "protein"},
             {"index": 7, "word": "10", "tag": "fat"},
-            {"index": 8, "word": "치킨", "tag": "B-FOOD"},
-            {"index": 9, "word": "조각", "tag": "B-UNIT"},
+            {"index": 8, "word": "볶음밥", "tag": "B-FOOD"},
+            {"index": 9, "word": "공기", "tag": "B-UNIT"},
             {"index": 10, "word": "150", "tag": "gram"},
             {"index": 11, "word": "200", "tag": "calories"},
             {"index": 12, "word": "50", "tag": "carbohydrates"},
