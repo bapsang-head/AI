@@ -10,10 +10,10 @@
 - Dockerfile을 만들어서 서버와 통신?하도록 공부중
 - 현재 
 
+### 첫번째 GPT 호출
 
-#### 입력과 응답 예시
-- 입력에서 사용자 전체 입력 문장을 어떻게 이용할 지 고민 중
-- 치킨에서 한 조각이 1500g이라는 오류가 있는데 수정 방안 탐색중
+#### 1. 입력
+- 개체명 인식을 하고 태깅된 문장을 GPT를 통해 예외케이스까지 잡아는 형식으로 진행한다
 
     ```json
     {
@@ -29,4 +29,51 @@
     }
     '''
 
-#### 응답 예시
+#### 2. 응답
+
+    ```json
+    {
+        "user_input": "나는 점심에 김치찌개를 두 그릇과 치킨 세조각을 먹었어",
+        "data": [
+            {"index": 1, "word": "김치찌개", "tag": "B-FOOD"},
+            {"index": 2, "word": "두", "tag": "B-QTY"},
+            {"index": 3, "word": "그릇", "tag": "B-UNIT"},
+            {"index": 4, "word": "치킨", "tag": "B-FOOD"},
+            {"index": 5, "word": "세", "tag": "B-QTY"},
+            {"index": 6, "word": "조각", "tag": "B-UNIT"},
+        ]
+    }
+    '''
+
+### 두번째 GPT 호출
+
+#### 1. 입력
+- 음식, 단위 정보가 DB에 없는 경우 호출하는 경우이다.
+- 
+
+    ```json
+    {
+        "data": [
+            {"index": 1, "word": "김치찌개", "tag": "B-FOOD"},
+            {"index": 2, "word": "그릇", "tag": "B-UNIT"},
+            {"index": 3, "word": "치킨", "tag": "B-FOOD"},
+            {"index": 4, "word": "조각", "tag": "B-UNIT"},
+        ]
+    }
+    '''
+
+##### 2. 응답
+
+    ```json
+    {
+        "data": [
+            {"index": 1, "word": "김치찌개", "tag": "B-FOOD"},
+            {"index": 2, "word": "두", "tag": "B-QTY"},
+            {"index": 3, "word": "그릇", "tag": "B-UNIT"},
+            {"index": 4, "word": "치킨", "tag": "B-FOOD"},
+            {"index": 5, "word": "세", "tag": "B-QTY"},
+            {"index": 6, "word": "조각", "tag": "B-UNIT"},
+        ]
+    }
+    '''
+
