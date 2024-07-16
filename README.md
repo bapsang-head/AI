@@ -15,18 +15,18 @@
 - 입력에서 사용자 전체 입력 문장을 어떻게 이용할 지 고민 중
 - 치킨에서 한 조각이 1500g이라는 오류가 있는데 수정 방안 탐색중
 
-```json
-{
-    "user_input": "나는 점심에 김치찌개를 두 그릇과 치킨 세조각을 먹었어",
-    "data": [
-        {"index": 1, "word": "김치찌개", "tag": "B-FOOD"},
-        {"index": 2, "word": "두", "tag": "B-QTY"},
-        {"index": 3, "word": "그릇", "tag": "B-UNIT"},
-        {"index": 4, "word": "치킨", "tag": "B-FOOD"},
-        {"index": 5, "word": "세", "tag": "B-QTY"},
-        {"index": 6, "word": "조각", "tag": "B-UNIT"},
-    ]
-}
-'''
+    ```json
+    {
+        "user_input": "나는 점심에 김치찌개를 두 그릇과 치킨 세조각을 먹었어",
+        "data": [
+            {"index": 1, "word": "김치찌개", "tag": "B-FOOD"},
+            {"index": 2, "word": "두", "tag": "B-QTY"},
+            {"index": 3, "word": "그릇", "tag": "B-UNIT"},
+            {"index": 4, "word": "치킨", "tag": "B-FOOD"},
+            {"index": 5, "word": "세", "tag": "B-QTY"},
+            {"index": 6, "word": "조각", "tag": "B-UNIT"},
+        ]
+    }
+    '''
 
 #### 응답 예시
