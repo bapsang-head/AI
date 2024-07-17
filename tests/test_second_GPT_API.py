@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 # OpenAI API 키 설정
 openai.api_key = Config.OPENAI_API_KEY
 
-def generate_response(prompt, max_tokens=200, temperature=0.7):
+def generate_response(prompt, max_tokens=200, temperature=0.9):
     """
     GPT 모델을 사용하여 프롬프트에 대한 응답을 생성합니다.
     """
@@ -32,21 +32,31 @@ def generate_response(prompt, max_tokens=200, temperature=0.7):
 
 if __name__ == "__main__":
     # 테스트 프롬프트
-    user_input = "나는 점심에 삽겹살을 2인분과 소주를 먹었어. 밥도 3공기 볶아 먹었어"
-    
-    # NER 모델을 사용하여 입력 데이터 처리
-    ner_result = ner_model(user_input)
-    
-    # NER 결과를 기반으로 GPT에 데이터 전송
-    ner_result_str = ", ".join([f'{{"index": {item["index"]}, "word": "{item["word"]}", "tag": "{item["tag"]}"}}' for item in ner_result])
+    food_data = [
+        {"word": "삽겹살", "tag": "B-FOOD"},
+        {"word": "인분", "tag": "B-UNIT"},
+        {"word": "볶음밥", "tag": "B-FOOD"},
+        {"word": "공기", "tag": "B-UNIT"},
+    ]
+
+    # 음식과 단위를 매칭하여 food_items에 추가
+    food_items = []
+    for i in range(0, len(food_data), 2):
+        food_items.append({
+            "food": food_data[i]["word"],
+            "unit": food_data[i + 1]["word"]
+        })
+
     prompt = (
-        f'The input text is: "{user_input}".\n'
-        f'The NER output is: [{ner_result_str}].\n'
-        'Please identify any missing food items, quantities, and units in the input text. '
-        'Return only the results in JSON format with each food item, quantity, and unit properly tagged. '
-        'Do not include any additional explanation or text. The JSON format should look like this: '
-        '[{"food": "example_food", "quantity": "example_quantity", "unit": "example_unit"}].'
+        f'The following is a list of foods and their units: {food_items}.\n'
+        'For each food item, convert the unit to grams and provide the nutritional information per 100g. '
+        'Return the results in JSON format with each food item and its corresponding nutritional values. '
+        'The JSON format should look like this: '
+        '[{"food": "example_food", "unit": "example_unit", "gram": "example_gram", "calories": "example_calories", '
+        '"carbohydrates": "example_carbohydrates", "protein": "example_protein", "fat": "example_fat"}]. '
+        'Do not include any additional text, only return the JSON.'
     )
+
     gpt_response = generate_response(prompt)
     
     # JSON 응답 보기 좋게 출력

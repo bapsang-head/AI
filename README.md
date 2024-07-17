@@ -9,9 +9,8 @@
 ### 현재 진행 상황 (2024.07.17 기준)
 - Dockerfile을 공부중
     - 간단하게 Dockerfile 만들어보긴 함
-- 현재 GPT 호출 부분 전체적인 수정 들어갈 예정
-- GPT API 호출해서 통신하는 부분 끝나면 RAG 기술 넣을 예정
-- 첫번째 GPT 호출하는 파트 구성 완료 (볶음밥과 같은 처리는 아직)
+- RAG 기술은 좀 더 공부하고 넣을 예정
+- GPT API 호출 관련한 부분은 작성 완료
 
 ### 첫번째 GPT 호출
 #### 1. 입력
@@ -70,22 +69,24 @@
 - 영양정보는 100g을 기준으로 보여준다. (칼로리, 탄수화물, 단백질, 지방)
 - 한 음식당 7개의 정보를 가지고 온다.
     ```json
-    {
-        "data": [
-            {"index": 1, "word": "삽겹살", "tag": "B-FOOD"},
-            {"index": 2, "word": "인분", "tag": "B-UNIT"},
-            {"index": 3, "word": "200", "tag": "gram"},
-            {"index": 4, "word": "200", "tag": "calories"},
-            {"index": 5, "word": "50", "tag": "carbohydrates"},
-            {"index": 6, "word": "20", "tag": "protein"},
-            {"index": 7, "word": "10", "tag": "fat"},
-            {"index": 8, "word": "볶음밥", "tag": "B-FOOD"},
-            {"index": 9, "word": "공기", "tag": "B-UNIT"},
-            {"index": 10, "word": "150", "tag": "gram"},
-            {"index": 11, "word": "200", "tag": "calories"},
-            {"index": 12, "word": "50", "tag": "carbohydrates"},
-            {"index": 13, "word": "100", "tag": "protein"},
-            {"index": 14, "word": "20", "tag": "fat"},
+        [
+            {
+                "food": "삽겹살",
+                "unit": "인분",
+                "gram": 200,
+                "calories": 520,
+                "carbohydrates": 0,
+                "protein": 21.7,
+                "fat": 47.5
+            },
+            {
+                "food": "볶음밥",
+                "unit": "공기",
+                "gram": 250,
+                "calories": 220,
+                "carbohydrates": 28,
+                "protein": 4.8,
+                "fat": 10
+            }
         ]
-    }
     ``` 
