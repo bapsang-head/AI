@@ -6,8 +6,5 @@ def ner_model(text):
         {"index": 1, "word": "삽겹살", "tag": "B-FOOD"},
         {"index": 2, "word": "2", "tag": "B-QTY"},
         {"index": 3, "word": "인분", "tag": "B-UNIT"},
-        {"index": 4, "word": "소주", "tag": "B-FOOD"},
-        {"index": 5, "word": "밥", "tag": "B-FOOD"},
-        {"index": 6, "word": "3", "tag": "B-QTY"},
-        {"index": 7, "word": "공기", "tag": "B-UNIT"}
+        {"index": 4, "word": "소주", "tag": "B-FOOD"}
     ]

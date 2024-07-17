@@ -1,5 +1,6 @@
 import openai
 import logging
+import json
 from app.config import Config
 from app.services.ner_service import ner_model
 
@@ -7,7 +8,7 @@ from app.services.ner_service import ner_model
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# OpenAI API 키 설정 (반드시 환경 변수 또는 안전한 방법으로 설정할 것)
+# OpenAI API 키 설정
 openai.api_key = Config.OPENAI_API_KEY
 
 def generate_response(prompt, max_tokens=200, temperature=0.7):
@@ -39,13 +40,19 @@ if __name__ == "__main__":
     # NER 결과를 기반으로 GPT에 데이터 전송
     ner_result_str = ", ".join([f'{{"index": {item["index"]}, "word": "{item["word"]}", "tag": "{item["tag"]}"}}' for item in ner_result])
     prompt = (
-        f'Input: {user_input}\n'
-        f'NER Output: [{ner_result_str}]\n'
-        'Refer to NER Output to output the food, quantity, and unit in the text of the input data in JSON format. '
-        'If any information is missing, tag it as "Null".'
+        f'The input text is: "{user_input}".\n'
+        f'The NER output is: [{ner_result_str}].\n'
+        'Please identify any missing food items, quantities, and units in the input text. '
+        'Return only the results in JSON format with each food item, quantity, and unit properly tagged. '
+        'Do not include any additional explanation or text. The JSON format should look like this: '
+        '[{"food": "example_food", "quantity": "example_quantity", "unit": "example_unit"}].'
     )
     gpt_response = generate_response(prompt)
     
-    # 응답 출력
+    # JSON 응답 보기 좋게 출력
     print("GPT 응답:")
-    print(gpt_response)
+    try:
+        response_json = json.loads(gpt_response)
+        print(json.dumps(response_json, indent=4, ensure_ascii=False))
+    except json.JSONDecodeError:
+        print(gpt_response)
