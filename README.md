@@ -32,20 +32,24 @@
 #### 2. 응답
 - NER 모델이 잡아내지 못한 부분까지 잡아내는 응답을 만들어낸다.
     ```json
-    {
-        "data": [
-            {"index": 1, "word": "삽겹살", "tag": "B-FOOD"},
-            {"index": 2, "word": "2", "tag": "B-QTY"},
-            {"index": 3, "word": "인분", "tag": "B-UNIT"},
-            {"index": 4, "word": "소주", "tag": "B-FOOD"},
-            {"index": 5, "word": "Null", "tag": "B-QTY"},
-            {"index": 6, "word": "Null", "tag": "B-UNIT"},
-            {"index": 7, "word": "볶음밥", "tag": "B-FOOD"},
-            {"index": 8, "word": "3", "tag": "B-QTY"},
-            {"index": 9, "word": "공기", "tag": "B-UNIT"}
-        ]
-    }
-    ``` 
+    [
+        {
+            "food": "삽겹살",
+            "quantity": "2",
+            "unit": "인분"
+        },
+        {
+            "food": "소주",
+            "quantity": "Null",
+            "unit": "Null"
+        },
+        {
+            "food": "밥",
+            "quantity": "3",
+            "unit": "공기"
+        }
+    ]
+    ```
 ### 두번째 GPT 호출
 #### 1. 입력
 - 음식, 단위 정보가 DB에 없는 경우 호출하는 경우이다.

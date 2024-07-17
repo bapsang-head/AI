@@ -1,11 +1,12 @@
-import sys
-import os
+from flask import Flask
+from app.api.endpoints.first_GPT_API import first_GPT_API_blueprint
+from app.api.endpoints.second_GPT_API import second_GPT_API_blueprint
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+app = Flask(__name__)
 
-from app import create_app
-
-app = create_app()
+# 블루프린트 등록
+app.register_blueprint(first_GPT_API_blueprint, url_prefix='/first_GPT_API')
+app.register_blueprint(second_GPT_API_blueprint, url_prefix='/second_GPT_API')
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=8080)
