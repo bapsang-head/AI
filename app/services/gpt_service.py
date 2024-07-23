@@ -10,8 +10,8 @@ def generate_response(prompt, max_tokens=300, temperature=0.7):
     """
     try:
         response = openai.ChatCompletion.create(
-            # model="gpt-3.5-turbo",
-            model = "gpt-4o",
+            model="gpt-4o-mini",
+            # model = "gpt-4o",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": prompt}
