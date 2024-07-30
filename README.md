@@ -1,54 +1,47 @@
 # AI
 
-노션에 올린 API 명세서 기준으로 구성한 구조이다
+### 현재 진행 상황 (2024.07.31 기준)
+- Dockerfile 실행해보기 *
+- RAG 기술은 좀 더 공부하고 넣을 예정
+- GPT API 호출 결과에서 여러가지의 오류들을 시도 해보기
+- endpoint에서 출력 형식 다시 맞추기 (README 처럼 만들기) *
 
 ## 환경 변수 설정
 이 프로젝트는 환경 변수를 사용합니다.  
 `.env` 파일을 프로젝트 루트 디렉토리에 생성하고 gpt 키값을 추가해야 정상적으로 동작합니다.
 
-### 현재 진행 상황 (2024.07.23 기준)
-- Dockerfile을 공부중
-    - 간단하게 Dockerfile 만들어보긴 함
-- RAG 기술은 좀 더 공부하고 넣을 예정
-- GPT API 호출 관련한 부분은 작성 완료 (간단한 데이터는 확인 완료)
+### GPT model은 GPT 4o로 통일
+
+### kobert
+- 유저 raw 입력 문장을 ko-bert를 통해 인식한 개체명들을 출력하는 함수는 app/service/ner_service.py에 있는 ner_model 함수이다.
+- 여기서 출력하는 내용은 하단에 있는 첫번째 GPT 호출의 입력과 동일하다.
+
 
 ### 첫번째 GPT 호출
 #### 1. 입력
 - 개체명 인식을 하고 태깅된 문장을 GPT를 통해 예외케이스까지 잡아는 형식으로 진행한다
     ```json
     {
-        "user_input": "나는 점심에 삽겹살을 2 인분과 소주을 먹었어. 밥도 3공기 볶아 먹었어",
+        "user_input": "나는 점심으로 삽결살 1인분과 소주 한잔을 먹었어",
         "data": [
-            {"index": 1, "word": "삽겹살", "tag": "B-FOOD"},
-            {"index": 2, "word": "2", "tag": "B-QTY"},
-            {"index": 3, "word": "인분", "tag": "B-UNIT"},
-            {"index": 4, "word": "소주", "tag": "B-FOOD"},
-            {"index": 5, "word": "밥", "tag": "B-FOOD"},
-            {"index": 6, "word": "3", "tag": "B-QTY"},
-            {"index": 7, "word": "공기", "tag": "B-UNIT"}
+                {"word": "삽결살 ", "tag": "B-FOOD"},
+                {"word": "1", "tag": "B-QTY"},
+                {"word": "인분", "tag": "B-UNIT"},
+                {"word": "소주", "tag": "B-FOOD"},
+                {"word": "한", "tag": "B-QTY"},
+                {"word": "잔", "tag": "B-UNIT"}
         ]
     }
     ``` 
 #### 2. 응답
 - NER 모델이 잡아내지 못한 부분까지 잡아내는 응답을 만들어낸다.
     ```json
-    [
-        {
-            "food": "삽겹살",
-            "quantity": "2",
-            "unit": "인분"
-        },
-        {
-            "food": "소주",
-            "quantity": null,
-            "unit": null
-        },
-        {
-            "food": "밥",
-            "quantity": "3",
-            "unit": "공기"
-        }
-    ]
+    { 
+        "data":[
+            {"food": "삼겹살", "quantity": "1", "unit": "인분"},
+            {"food": "소주", "quantity": "한", "unit": "잔"}
+        ]
+    }
     ```
 ### 두번째 GPT 호출
 #### 1. 입력
