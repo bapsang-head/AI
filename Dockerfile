@@ -22,4 +22,4 @@ ENV FLASK_APP=app.main
 ENV FLASK_ENV=development
 
 # flask 명령어 실행
-CMD ["flask", "run", "--host=0.0.0.0", "--port=8080"]
+CMD ["flask", "run"]
