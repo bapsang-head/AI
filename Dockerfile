@@ -12,6 +12,7 @@ COPY . .
 
 # requirements.txt에 명시된 필요한 패키지들을 설치
 RUN pip install --upgrade pip
+RUN pip install flask
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 외부에서 이 컨테이너의 5000 포트를 사용할 수 있도록 설정
@@ -22,4 +23,4 @@ ENV FLASK_APP=app.main
 ENV FLASK_ENV=development
 
 # flask 명령어 실행
-CMD ["python3", "main.py"]
+CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0", "--port=5001"]
