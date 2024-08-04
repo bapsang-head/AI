@@ -39,7 +39,7 @@ jobs:
           echo "::set-output name=image::${{ env.DOCKER_REGISTRY_URL }}/${{ env.DOCKER_IMAGE_NAME }}:latest"
 
   deploy:
-    needs: build-and-push-docker-image
+    needs: build
     runs-on: ubuntu-latest
     steps:
       # Deploying the Docker container via SSH
