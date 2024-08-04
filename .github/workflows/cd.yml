@@ -55,6 +55,6 @@ jobs:
             docker rm ${{ env.DOCKER_CONTAINER_NAME }}
             docker pull ${{ env.DOCKER_REGISTRY_URL }}/${{ env.DOCKER_IMAGE_NAME }}
             docker run -d -p 5001:5001 --name ${{ env.DOCKER_CONTAINER_NAME }} ${{ env.DOCKER_REGISTRY_URL }}/${{ env.DOCKER_IMAGE_NAME }}\
-             -e ${{ secrets.GPT_API_KEY }}
+             -e OPENAI_API_KEY=${{ secrets.GPT_API_KEY }}
             # Cleaning up unused Docker images
             docker image prune -f
