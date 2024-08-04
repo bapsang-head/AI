@@ -9,4 +9,4 @@ app.register_blueprint(first_GPT_API_blueprint, url_prefix='/first_GPT_API')
 app.register_blueprint(second_GPT_API_blueprint, url_prefix='/second_GPT_API')
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+    app.run(host="0.0.0.0", port=5000)
