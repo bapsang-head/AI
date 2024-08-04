@@ -22,4 +22,4 @@ ENV FLASK_APP=app.main
 ENV FLASK_ENV=development
 
 # flask 명령어 실행
-CMD ["flask", "run"]
+CMD ["python3", "main.py"]
