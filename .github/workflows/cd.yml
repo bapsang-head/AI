@@ -1,0 +1,59 @@
+name: Build and Deploy Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  DOCKER_REGISTRY_URL: ${{ secrets.DOCKER_REGISTRY_URL }}
+  DOCKER_IMAGE_NAME: fancychild-ai
+  DOCKER_CONTAINER_NAME: fancychild-server
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
+
+      - name: Login to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v
+
+      - name: Docker build and push
+        run: |
+          docker build --platform linux/amd64 -t ${{ env.DOCKER_IMAGE_NAME }} .
+          docker tag ${{ env.DOCKER_IMAGE_NAME }}:latest ${{ env.DOCKER_REGISTRY_URL }}/${{ env.DOCKER_IMAGE_NAME }}:latest
+          docker push ${{ env.DOCKER_REGISTRY_URL }}/${{ env.DOCKER_IMAGE_NAME }}:latest
+          echo "::set-output name=image::${{ env.DOCKER_REGISTRY_URL }}/${{ env.DOCKER_IMAGE_NAME }}:latest"
+
+  deploy:
+    needs: build-and-push-docker-image
+    runs-on: ubuntu-latest
+    steps:
+      # Deploying the Docker container via SSH
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ec2-user
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin ${{ env.DOCKER_REGISTRY_URL }}
+            docker stop ${{ env.DOCKER_CONTAINER_NAME }}
+            docker rm ${{ env.DOCKER_CONTAINER_NAME }}
+            docker pull ${{ env.DOCKER_REGISTRY_URL }}/${{ env.DOCKER_IMAGE_NAME }}
+            docker run -d -p 5001:5001 --name ${{ env.DOCKER_CONTAINER_NAME }} ${{ env.DOCKER_IMAGE_NAME }}
+            # Cleaning up unused Docker images
+            docker image prune -f
