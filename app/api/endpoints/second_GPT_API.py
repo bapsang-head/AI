@@ -1,5 +1,6 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, Response
 from app.services.gpt_service import generate_response
+import json
 
 second_GPT_API_blueprint = Blueprint('result', __name__)
 
@@ -30,4 +31,14 @@ def process_result():
 
     gpt_response = generate_response(prompt)
 
-    return jsonify({"data": gpt_response})
+    # GPT 응답을 JSON 형식으로 변환
+    gpt_response_json = json.loads(gpt_response)
+    
+    # JSON 데이터를 문자열로 변환하면서 실제 줄바꿈 문자 포함
+    response_json = json.dumps({"data": gpt_response_json}, ensure_ascii=False, indent=4)
+    
+    # Response 객체로 반환하여 Content-Type을 application/json으로 설정
+    return Response(response_json, mimetype='application/json')
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5001, debug=True)
