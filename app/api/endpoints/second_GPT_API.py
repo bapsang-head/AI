@@ -40,5 +40,3 @@ def process_result():
     # Response 객체로 반환하여 Content-Type을 application/json으로 설정
     return Response(response_json, mimetype='application/json')
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001, debug=True)

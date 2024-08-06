@@ -38,5 +38,4 @@ def process_NER():
 
 app.register_blueprint(first_GPT_API_blueprint, url_prefix='/second_GPT_API')
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001, debug=True)
+
