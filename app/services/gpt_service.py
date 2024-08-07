@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 # OpenAI API 키 설정
 openai.api_key = Config.OPENAI_API_KEY
 
-def generate_response(prompt, max_tokens=200, temperature=0.9):
+def generate_response(prompt, max_tokens=1000, temperature=0.9):
     """
     GPT 모델을 사용하여 프롬프트에 대한 응답을 생성합니다.
     """
