@@ -1,6 +1,7 @@
 import openai
 import logging
 from app.config import Config
+from app.models.GPT.init import get_gpt_model
 
 # 로깅 설정
 logging.basicConfig(level=logging.INFO)
@@ -16,7 +17,7 @@ def generate_response(prompt, max_tokens=1000, temperature=0.9):
     try:
         # logger.info(f"Sending prompt to OpenAI: {prompt}")
         response = openai.ChatCompletion.create(
-            model="gpt-4",
+            model= get_gpt_model(),
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": prompt}
