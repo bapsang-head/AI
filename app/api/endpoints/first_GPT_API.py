@@ -37,14 +37,19 @@ def process_NER():
 
         ner_result_str = ", ".join([f'{{"word": "{item["word"]}", "tag": "{item["tag"]}"}}' for item in ner_result_parsed])
         prompt = (
-            f'The input text is: "{user_input}".\n'
-            f'The NER output is: [{ner_result_str}].\n'
-            'Please identify any missing food items, quantities, and units in the input text. '
-            'Return only the results in JSON format with each food item, quantity, and unit properly tagged. '
-            'If any information is missing, explicitly use "null" (in lowercase) instead of leaving it blank. '
-            'The JSON format should look like this: '
-            '[{"food": "example_food", "quantity": "example_quantity", "unit": "example_unit"}].'
+            f'입력 텍스트는 다음과 같습니다: "{user_input}".\n'
+            f'NER 출력 결과는 다음과 같습니다: [{ner_result_str}].\n'
+            '텍스트의 문맥을 고려하여 누락된 음식 항목, 수량 및 단위를 식별하세요. '
+            '다음 규칙을 적용하여 추가 개체명 인식을 수행하세요:\n'
+            '1. 문맥을 고려해서 개체명 인식을 수행해줘 예를 들면 "국수를 비벼"라는 표현은 "비빔국수"로 인식하고, "밥을 볶아"라는 표현은 "볶음밥"으로 인식하세요.\n'
+            '결과를 JSON 형식으로 반환하며, 각 음식 항목, 수량 및 단위가 적절히 태그된 형식을 사용하세요. '
+            '정보가 누락된 경우에는 "null"(소문자)로 명시하세요. '
+            '하지만 food, quantity, unit이 전부 null인 경우는 없으니 결과로 전부 null이 나오면 생략해서 답변을 주세요.'
+            'JSON 형식은 다음과 같아야 합니다: '
+            '[{"food": "예시_음식", "quantity": "예시_수량", "unit": "예시_단위"}]. '
+            '모든 텍스트와 태그는 한국어로 반환하세요. 추가적인 설명이나 텍스트는 포함하지 마세요.'
         )
+
 
         gpt_response = generate_response(prompt)
         logging.info("GPT response: %s", gpt_response)
