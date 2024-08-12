@@ -23,7 +23,7 @@ def process_NER():
     """
     try:
         # API 키를 요청 헤더에서 가져오기
-        gpt_api_key = request.headers.get('X-GPT-API-KEY')
+        gpt_api_key = request.headers.get('GPT-API-KEY')
         if not gpt_api_key:
             return jsonify({"error": "Missing GPT API key in headers"}), 400
 
