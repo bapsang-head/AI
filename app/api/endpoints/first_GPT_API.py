@@ -19,9 +19,14 @@ rate_limiter = RateLimiter(max_calls=100)
 def process_NER():
     """
     NER (Named Entity Recognition) 처리를 수행하는 API 엔드포인트.
-    하루에 100회까지 호출이 가능하며, 그 이상 호출 시 429 에러를 반환합니다.
+    하루에 100회까지 호출이 가능하며, 올바른 API 키가 필요합니다.
     """
     try:
+        # API 키를 요청 헤더에서 가져오기
+        gpt_api_key = request.headers.get('X-GPT-API-KEY')
+        if not gpt_api_key:
+            return jsonify({"error": "Missing GPT API key in headers"}), 400
+
         logging.info("Received request: %s", request.data)
         
         data = request.get_json(force=True)
@@ -58,7 +63,7 @@ def process_NER():
         )
 
         # GPT 모델에 프롬프트 전달하고 결과 수신
-        gpt_response = generate_response(prompt)
+        gpt_response = generate_response(prompt, gpt_api_key)
         logging.info("GPT response: %s", gpt_response)
         
         # 백틱을 제거하고 JSON 파싱 시도

@@ -1,6 +1,10 @@
 from functools import wraps
 from flask import jsonify
 from datetime import datetime, timedelta
+import logging
+
+# 로깅 설정
+logger = logging.getLogger(__name__)
 
 class RateLimiter:
     def __init__(self, max_calls):
@@ -32,6 +36,9 @@ class RateLimiter:
 
             # 호출 횟수 증가
             self.call_count += 1
+
+            # 현재 호출 횟수를 로깅
+            logger.info(f"Current API call count: {self.call_count} out of {self.max_calls} allowed.")
             
             # 실제 API 함수 호출
             return f(*args, **kwargs)
