@@ -1,0 +1,11 @@
+# KoBERT 패키지
+git+https://github.com/SKTBrain/KoBERT.git#egg=kobert_tokenizer&subdirectory=kobert_hf
+tqdm
+transformers
+torch
+numpy
+seqeval
+sentencepiece
+konlpy
+konlpy mecab-python3
+mecab-ko-dic
