@@ -1,0 +1,1609 @@
+0	롯데리아	FOOD-B
+1	빅불버거	FOOD-I
+2	1	QTY-B
+3	개	UNIT-B
+4	먹었어.	O
+
+0	파파이스	FOOD-B
+1	후라이드치킨	FOOD-I
+2	2	QTY-B
+3	마리	UNIT-B
+4	주문했어.	O
+
+0	투썸플레이스	FOOD-B
+1	카페모카	FOOD-I
+2	1	QTY-B
+3	잔	UNIT-B
+4	마심.	O
+
+0	할리스커피	FOOD-B
+1	바닐라라떼	FOOD-I
+2	1	QTY-B
+3	잔	UNIT-B
+4	먹었어.	O
+
+0	피자스쿨	FOOD-B
+1	불고기피자	FOOD-I
+2	1	QTY-B
+3	판	UNIT-B
+4	먹었어.	O
+
+0	홍콩반점	FOOD-B
+1	짬뽕	FOOD-I
+2	1	QTY-B
+3	그릇	UNIT-B
+4	먹었어.	O
+
+0	베스킨라빈스	FOOD-B
+1	망고	FOOD-I
+2	1	QTY-B
+3	스쿱	UNIT-B
+4	주문했어.	O
+
+0	삼겹살집	FOOD-B
+1	삼겹살	FOOD-I
+2	1	QTY-B
+3	인분	UNIT-B
+4	먹었어.	O
+
+0	김밥천국	FOOD-B
+1	참치김밥	FOOD-I
+2	1	QTY-B
+3	줄	UNIT-B
+4	먹었어.	O
+
+0	버거킹	FOOD-B
+1	킹너겟	FOOD-I
+2	3	QTY-B
+3	개	UNIT-B
+4	먹었어.	O
+
+0	피자헛	FOOD-B
+1	고구마피자	FOOD-I
+2	1	QTY-B
+3	판	UNIT-B
+4	주문했어.	O
+
+0	스타벅스	FOOD-B
+1	카푸치노	FOOD-I
+2	2	QTY-B
+3	잔	UNIT-B
+4	마심.	O
+
+0	이디야	FOOD-B
+1	카라멜마키아토	FOOD-I
+2	1	QTY-B
+3	잔	UNIT-B
+4	먹었어.	O
+
+0	맥도날드	FOOD-B
+1	상하이너겟	FOOD-I
+2	1	QTY-B
+3	개	UNIT-B
+4	마심.	O
+
+0	도미노피자	FOOD-B
+1	콤비네이션피자	FOOD-I
+2	1	QTY-B
+3	판	UNIT-B
+4	주문했어.	O
+
+0	던킨도너츠	FOOD-B
+1	초콜릿	FOOD-I
+2	2	QTY-B
+3	개	UNIT-B
+4	먹었어.	O
+
+0	파리바게뜨	FOOD-B
+1	딸기케이크	FOOD-I
+2	1	QTY-B
+3	조각	UNIT-B
+4	주문했어.	O
+
+0	버거킹	FOOD-B
+1	치킨너겟	FOOD-I
+2	2	QTY-B
+3	개	UNIT-B
+4	먹었어.	O
+
+0	교촌치킨	FOOD-B
+1	양념치킨	FOOD-I
+2	1	QTY-B
+3	마리	UNIT-B
+4	마심.	O
+
+0	이디야	FOOD-B
+1	프라푸치노	FOOD-I
+2	1	QTY-B
+3	잔	UNIT-B
+4	주문했어.	O
+
+0	아침	O
+1	식사	O
+2	로	O
+3	부리또	FOOD-B
+4	한	QTY-B
+5	개	UNIT-B
+6	와	O
+7	사과주스	FOOD-B
+8	한	QTY-B
+9	컵	UNIT-B
+10	을	O
+11	먹었어	O
+
+0	저녁	O
+1	시간	O
+2	에	O
+3	치킨너겟	FOOD-B
+4	세	QTY-B
+5	조각	UNIT-B
+6	과	O
+7	스프	FOOD-B
+8	한	QTY-B
+9	그릇	UNIT-B
+10	을	O
+11	먹었다	O
+
+0	점심	O
+1	때	O
+2	제육볶음	FOOD-B
+3	과	O
+4	미역국	FOOD-B
+5	을	O
+6	함께	O
+7	즐겼어	O
+
+0	나는	O
+1	오늘	O
+2	점심	O
+3	에	O
+4	감자	FOOD-B
+5	튀김	FOOD-I
+6	과	O
+7	밥	FOOD-B
+8	한	QTY-B
+9	공기	UNIT-B
+10	를	O
+11	식사했어	O
+
+0	아침	O
+1	에	O
+2	바게트	FOOD-B
+3	두	QTY-B
+4	조각	UNIT-B
+5	과	O
+6	우유	FOOD-B
+7	한	QTY-B
+8	컵	UNIT-B
+9	을	O
+10	마셨다	O
+
+0	점심	O
+1	시간	O
+2	에	O
+3	쌀국수	FOOD-B
+4	한	QTY-B
+5	그릇	UNIT-B
+6	과	O
+7	튀김	FOOD-B
+8	세	QTY-B
+9	조각	UNIT-B
+10	을	O
+11	먹었다	O
+
+0	저녁	O
+1	으로	O
+2	스파게티	FOOD-B
+3	한	QTY-B
+4	접시	UNIT-B
+5	와	O
+6	샐러드	FOOD-B
+7	한	QTY-B
+8	그릇	UNIT-B
+9	을	O
+10	먹었어	O
+
+0	나는	O
+1	오늘	O
+2	아침	O
+3	에	O
+4	달걀	FOOD-B
+5	후라이	FOOD-I
+6	와	O
+7	볶음밥	FOOD-B
+8	한	QTY-B
+9	그릇	UNIT-B
+10	을	O
+11	먹었다	O
+
+0	점심	O
+1	때	O
+2	구운연어	FOOD-B
+3	한	QTY-B
+4	조각	UNIT-B
+5	과	O
+6	채소	FOOD-B
+7	한	QTY-B
+8	접시	UNIT-B
+9	를	O
+10	먹었다	O
+
+0	저녁	O
+1	에	O
+2	볶음밥	FOOD-B
+3	한	QTY-B
+4	그릇	UNIT-B
+5	과	O
+6	오징어	FOOD-B
+7	튀김	FOOD-I
+8	두	QTY-B
+9	조각	UNIT-B
+10	을	O
+11	즐겼다	O
+
+0	아침	O
+1	에	O
+2	김치찌개	FOOD-B
+3	한	QTY-B
+4	그릇	UNIT-B
+5	과	O
+6	밥	FOOD-B
+7	한	QTY-B
+8	공기	UNIT-B
+9	를	O
+10	먹었어	O
+
+0	나는	O
+1	오늘	O
+2	저녁	O
+3	에	O
+4	냉면	FOOD-B
+5	한	QTY-B
+6	그릇	UNIT-B
+7	과	O
+8	교자만두	FOOD-B
+9	다섯	QTY-B
+10	개	UNIT-B
+11	를	O
+12	먹었어	O
+
+0	점심	O
+1	에	O
+2	우동	FOOD-B
+3	300	QTY-B
+4	g	UNIT-B
+
+0	나는	O
+1	저녁	O
+2	에	O
+3	불고기	FOOD-B
+4	한	QTY-B
+5	접시	UNIT-B
+6	와	O
+7	상추	FOOD-B
+8	한	QTY-B
+9	잎	UNIT-B
+10	을	O
+11	먹었어	O
+
+0	오늘	O
+1	아침	O
+2	에	O
+3	샌드위치	FOOD-B
+4	세	QTY-B
+5	조각	UNIT-B
+6	와	O
+7	주스	FOOD-B
+8	한	QTY-B
+9	컵	UNIT-B
+10	을	O
+11	마셨다	O
+
+0	저녁	O
+1	으로	O
+2	소고기국밥	FOOD-B
+3	한	QTY-B
+4	그릇	UNIT-B
+5	과	O
+6	김치	FOOD-B
+7	한	QTY-B
+8	접시	UNIT-B
+9	를	O
+10	먹었어	O
+
+0	나는	O
+1	점심	O
+2	에	O
+3	콩국수	FOOD-B
+4	두	QTY-B
+5	그릇	UNIT-B
+6	과	O
+7	계란	FOOD-B
+8	하나	QTY-B
+9	를	O
+10	먹었어	O
+
+0	아침	O
+1	에	O
+2	스무디	FOOD-B
+3	한	QTY-B
+4	컵	UNIT-B
+5	과	O
+6	토스트	FOOD-B
+7	두	QTY-B
+8	조각	UNIT-B
+9	을	O
+10	먹었어	O
+
+0	점심	O
+1	으로	O
+2	잡채	FOOD-B
+3	한	QTY-B
+4	접시	UNIT-B
+5	와	O
+6	계란찜	FOOD-B
+7	두	QTY-B
+8	그릇	UNIT-B
+9	을	O
+10	먹었어	O
+
+0	나는	O
+1	저녁	O
+2	에	O
+3	치킨	FOOD-B
+4	한	QTY-B
+5	마리	UNIT-B
+6	와	O
+7	피자	FOOD-B
+8	한	QTY-B
+9	조각	UNIT-B
+10	을	O
+11	먹었어	O
+
+0	비타민C	FOOD-B
+1	300	FOOD-I
+2	한	QTY-B
+3	병.	O
+
+0	비타민	FOOD-B
+1	C	FOOD-I
+2	두	QTY-B
+3	병.	UNIT-B
+
+0	2%	FOOD-B
+1	1	QTY-B
+2	병	UNIT-B
+3	마셨다.	O
+
+0	2	FOOD-B
+1	%	FOOD-I
+2	한	QTY-B
+3	병.	UNIT-B
+
+0	2프로	FOOD-B
+1	1	QTY-B
+2	병	UNIT-B
+3	마셨다.	O
+
+0	2	FOOD-B
+1	프로	FOOD-I
+2	한	QTY-B
+3	병.	UNIT-B
+
+0	이상한나라의사탕솜	FOOD-B
+1	1.2	QTY-B
+2	개	UNIT-B
+3	먹었다.	O
+
+0	이상한	FOOD-B
+1	나라의	FOOD-I
+2	사탕솜	FOOD-I
+3	세	FOOD-I
+4	개	UNIT-B
+5	먹었다.	O
+
+0	뉴욕치즈케이크	FOOD-B
+1	싱글	FOOD-I
+2	1	QTY-B
+3	판	UNIT-B
+4	먹었다.	O
+
+0	뉴욕	FOOD-B
+1	치즈케이크	FOOD-I
+2	1.5	FOOD-I
+3	판	UNIT-B
+4	먹었다.	O
+
+0	호두	FOOD-B
+1	초콜릿	FOOD-I
+2	1	QTY-B
+3	통	UNIT-B
+4	먹었다.	O
+
+0	호두초콜릿	FOOD-B
+1	싱글	FOOD-I
+2	1	QTY-B
+3	인분	UNIT-B
+4	먹었다.	O
+
+0	사랑에	FOOD-B
+1	빠진	FOOD-I
+2	바닐라	FOOD-I
+3	세	FOOD-I
+4	개	UNIT-B
+5	먹었다.	O
+
+0	사랑에빠진바닐라	FOOD-B
+1	1.5	QTY-B
+2	통	UNIT-B
+3	먹었다.	O
+
+0	바나나나무숲	FOOD-B
+1	1	QTY-B
+2	개	UNIT-B
+3	먹었다.	O
+
+0	스타벅스	FOOD-B
+1	아메리카노	FOOD-I
+2	벤티	FOOD-I
+3	1	QTY-B
+4	잔	UNIT-B
+5	마셨다.	O
+
+0	스타벅스	FOOD-B
+1	모카	FOOD-I
+2	톨	FOOD-I
+3	1	QTY-B
+4	잔	UNIT-B
+5	마셨다.	O
+
+0	스타벅스	FOOD-B
+1	카푸치노	FOOD-I
+2	그란데	FOOD-I
+3	1	QTY-B
+4	잔	UNIT-B
+5	마셨다.	O
+
+0	스타벅스	FOOD-B
+1	아이리스	FOOD-I
+2	카페라떼	FOOD-I
+3	1	QTY-B
+4	잔	UNIT-B
+5	마셨다.	O
+
+0	BBQ	FOOD-B
+1	매운치킨	FOOD-I
+2	1	QTY-B
+3	마리	UNIT-B
+4	먹었다.	O
+
+0	BBQ	FOOD-B
+1	후라이드	FOOD-I
+2	1	QTY-B
+3	마리	UNIT-B
+4	먹었다.	O
+
+0	BBQ	FOOD-B
+1	갈릭치킨	FOOD-I
+2	1	QTY-B
+3	마리	UNIT-B
+4	먹었다.	O
+
+0	교촌치킨	FOOD-B
+1	허니순살	FOOD-I
+2	1	QTY-B
+3	마리	UNIT-B
+4	먹었다.	O
+
+0	버거킹	FOOD-B
+1	와퍼	FOOD-I
+2	1	QTY-B
+3	개	UNIT-B
+4	먹었다.	O
+
+0	이디야	FOOD-B
+1	모카	FOOD-I
+2	1	QTY-B
+3	잔	UNIT-B
+4	마셨다.	O
+
+0	피자헛	FOOD-B
+1	불고기피자	FOOD-I
+2	1	QTY-B
+3	판	UNIT-B
+4	먹었다.	O
+
+0	서브웨이	FOOD-B
+1	터키샌드위치	FOOD-I
+2	1	QTY-B
+3	개	UNIT-B
+4	먹었다.	O
+
+0	배스킨라빈스	FOOD-B
+1	초코칩	FOOD-I
+2	1	QTY-B
+3	통	UNIT-B
+4	먹었다.	O
+
+0	노브랜드	FOOD-B
+1	냉동만두	FOOD-I
+2	2	QTY-B
+3	봉지	UNIT-B
+4	사왔다.	O
+
+0	CJ햄	FOOD-B
+1	2	QTY-B
+2	팩	UNIT-B
+3	먹었다.	O
+
+0	바나나	FOOD-B
+1	빙수	FOOD-I
+2	2	QTY-B
+3	그릇	UNIT-B
+4	주문했어요	O
+
+0	블루베리	FOOD-B
+1	요거트	FOOD-I
+2	0.5	QTY-B
+3	컵	UNIT-B
+4	먹었어요	O
+
+0	복숭아	FOOD-B
+1	스무디	FOOD-I
+2	1	QTY-B
+3	잔	UNIT-B
+4	마셨어요	O
+
+0	고구마피자	FOOD-B
+1	소	FOOD-I
+2	1	QTY-B
+3	판	UNIT-B
+4	주문했어요	O
+
+0	올리브피자	FOOD-B
+1	대	FOOD-I
+2	2	QTY-B
+3	판	UNIT-B
+4	먹었어요	O
+
+0	매운닭피자	FOOD-B
+1	중	FOOD-I
+2	1	QTY-B
+3	판	UNIT-B
+4	주문했어요	O
+0	레몬	FOOD-B
+1	에이드	FOOD-I
+2	1	QTY-B
+3	컵	UNIT-B
+4	주문했어요	O
+
+0	키위	FOOD-B
+1	젤리	FOOD-I
+2	0.75	QTY-B
+3	통	UNIT-B
+4	먹었어요	O
+
+0	체리	FOOD-B
+1	타르트	FOOD-I
+2	3	QTY-B
+3	조각	UNIT-B
+4	마셨어요	O
+
+0	피넛버터	FOOD-B
+1	샌드위치	FOOD-I
+2	2	QTY-B
+3	개	UNIT-B
+4	주문했어요	O
+
+0	당근	FOOD-B
+1	케이크	FOOD-I
+2	1.5	QTY-B
+3	조각	UNIT-B
+4	먹었어요	O
+
+0	토마토	FOOD-B
+1	스프	FOOD-I
+2	1	QTY-B
+3	그릇	UNIT-B
+4	마셨어요	O
+
+0	바닐라	FOOD-B
+1	푸딩	FOOD-I
+2	1	QTY-B
+3	컵	UNIT-B
+4	주문했어요	O
+
+0	오렌지	FOOD-B
+1	주스	FOOD-I
+2	2	QTY-B
+3	잔	UNIT-B
+4	먹었어요	O
+
+0	감자	FOOD-B
+1	튀김	FOOD-I
+2	1.5	QTY-B
+3	접시	UNIT-B
+4	주문했어요	O
+
+0	자몽	FOOD-B
+1	샐러드	FOOD-I
+2	1	QTY-B
+3	그릇	UNIT-B
+4	먹었어요	O
+
+0	망고	FOOD-B
+1	타르트	FOOD-I
+2	2	QTY-B
+3	조각	UNIT-B
+4	마셨어요	O
+
+0	복숭아	FOOD-B
+1	스무디	FOOD-I
+2	1	QTY-B
+3	컵	UNIT-B
+4	주문했어요	O
+
+0	파인애플	FOOD-B
+1	피자	FOOD-I
+2	1	QTY-B
+3	판	UNIT-B
+4	먹었어요	O
+
+0	호두	FOOD-B
+1	브라우니	FOOD-I
+2	3	QTY-B
+3	조각	UNIT-B
+4	마셨어요	O
+
+0	레드벨벳	FOOD-B
+1	케이크	FOOD-I
+2	아홉	QTY-B
+3	조각	UNIT-B
+4	주문했어요	O
+
+0	치킨	FOOD-B
+1	너겟	FOOD-I
+2	여덟	QTY-B
+3	개	UNIT-B
+4	먹었어요	O
+
+0	햄버거	FOOD-B
+1	치즈	FOOD-I
+2	여덜	QTY-B
+3	개	UNIT-B
+4	주문했어요	O
+
+0	스파게티	FOOD-B
+1	볼로네제	FOOD-I
+2	네	QTY-B
+3	접시	UNIT-B
+4	먹었어요	O
+
+0	파스타	FOOD-B
+1	알프레도	FOOD-I
+2	1.5	QTY-B
+3	접시	UNIT-B
+4	마셨어요	O
+
+0	닭가슴살	FOOD-B
+1	구이	FOOD-I
+2	1	QTY-B
+3	조각	UNIT-B
+4	주문했어요	O
+
+0	소세지	FOOD-B
+1	피자	FOOD-I
+2	2	QTY-B
+3	판	UNIT-B
+4	먹었어요	O
+
+0	샐러드	FOOD-B
+1	드레싱	FOOD-I
+2	1	QTY-B
+3	그릇	UNIT-B
+4	마셨어요	O
+
+0	퀘사디아	FOOD-B
+1	치즈	FOOD-I
+2	1	QTY-B
+3	개	UNIT-B
+4	주문했어요	O
+
+0	타코	FOOD-B
+1	고기	FOOD-I
+2	3	QTY-B
+3	개	UNIT-B
+4	먹었어요	O
+
+0	크림소스	FOOD-B
+1	파스타	FOOD-I
+2	1	QTY-B
+3	접시	UNIT-B
+4	마셨어요	O
+
+0	붕어빵	FOOD-B
+1	팥	FOOD-I
+2	4	QTY-B
+3	개	UNIT-B
+4	주문했어요	O
+
+0	초코케이크	FOOD-B
+1	디저트	FOOD-I
+2	열여덟	QTY-B
+3	조각	UNIT-B
+4	먹었어요	O
+
+0	사과	FOOD-B
+1	파이	FOOD-I
+2	여덜	QTY-B
+3	조각	UNIT-B
+4	마셨어요	O
+
+0	바베큐	FOOD-B
+1	치킨	FOOD-I
+2	1	QTY-B
+3	접시	UNIT-B
+4	주문했어요	O
+
+0	콩빙수	FOOD-B
+1	팥	FOOD-I
+2	일곱	QTY-B
+3	그릇	UNIT-B
+4	먹었어요	O
+
+0	오징어튀김	FOOD-B
+1	안주	FOOD-I
+2	여섯	QTY-B
+3	접시	UNIT-B
+4	주문했어요	O
+
+0	소고기	FOOD-B
+1	스테이크	FOOD-I
+2	1	QTY-B
+3	조각	UNIT-B
+4	먹었어요	O
+
+0	칼국수	FOOD-B
+1	해물	FOOD-I
+2	아홉	QTY-B
+3	그릇	UNIT-B
+4	마셨어요	O
+
+0	우동	FOOD-B
+1	돈부리	FOOD-I
+2	1	QTY-B
+3	접시	UNIT-B
+4	주문했어요	O
+
+0	김밥	FOOD-B
+1	참치	FOOD-I
+
+0	햇토마토	FOOD-B
+1	샐러드	FOOD-I
+2	1	QTY-B
+3	그릇	UNIT-B
+4	주문했어요	O
+
+0	포도	FOOD-B
+1	주스	FOOD-I
+2	1.5	QTY-B
+3	컵	UNIT-B
+4	먹었어요	O
+
+0	호박	FOOD-B
+1	죽	FOOD-I
+2	1	QTY-B
+3	그릇	UNIT-B
+4	마셨어요	O
+
+0	고구마	FOOD-B
+1	튀김	FOOD-I
+2	2	QTY-B
+3	접시	UNIT-B
+4	주문했어요	O
+
+0	계란	FOOD-B
+1	프라이	FOOD-I
+2	3	QTY-B
+3	개	UNIT-B
+4	먹었어요	O
+
+0	연어	FOOD-B
+1	스시	FOOD-I
+2	5	QTY-B
+3	조각	UNIT-B
+4	마셨어요	O
+
+0	레몬에이드	FOOD-B
+1	음료	FOOD-I
+2	1	QTY-B
+3	컵	UNIT-B
+4	주문했어요	O
+
+0	된장찌개	FOOD-B
+1	찌개	FOOD-I
+2	1	QTY-B
+3	그릇	UNIT-B
+4	먹었어요	O
+
+0	어묵	FOOD-B
+1	탕	FOOD-I
+2	1.5	QTY-B
+3	그릇	UNIT-B
+4	마셨어요	O
+
+0	만두	FOOD-B
+1	찌개	FOOD-I
+2	2	QTY-B
+3	개	UNIT-B
+4	주문했어요	O
+
+0	치킨너겟	FOOD-B
+1	안주	FOOD-I
+2	6	QTY-B
+3	개	UNIT-B
+4	먹었어요	O
+
+0	불고기	FOOD-B
+1	덮밥	FOOD-I
+2	1	QTY-B
+3	접시	UNIT-B
+4	주문했어요	O
+
+0	춘권	FOOD-B
+1	튀김	FOOD-I
+2	4	QTY-B
+3	개	UNIT-B
+4	먹었어요	O
+
+0	소고기	FOOD-B
+1	국밥	FOOD-I
+2	1	QTY-B
+3	그릇	UNIT-B
+4	마셨어요	O
+
+0	수박	FOOD-B
+1	슬라이스	FOOD-I
+2	2	QTY-B
+3	조각	UNIT-B
+4	주문했어요	O
+
+0	카레	FOOD-B
+1	밥	FOOD-I
+2	1	QTY-B
+3	그릇	UNIT-B
+4	먹었어요	O
+
+0	바나나	FOOD-B
+1	스무디	FOOD-I
+2	1	QTY-B
+3	컵	UNIT-B
+4	마셨어요	O
+
+0	햄	FOOD-B
+1	샌드위치	FOOD-I
+2	2	QTY-B
+3	개	UNIT-B
+4	주문했어요	O
+
+0	김치	FOOD-B
+1	전	FOOD-I
+2	1	QTY-B
+3	접시	UNIT-B
+4	먹었어요	O
+
+0	아보카도	FOOD-B
+1	토스트	FOOD-I
+2	1	QTY-B
+3	조각	UNIT-B
+4	주문했어요	O
+
+0	감자	FOOD-B
+1	샐러드	FOOD-I
+2	1	QTY-B
+3	그릇	UNIT-B
+4	먹었어요	O
+
+0	초밥	FOOD-B
+1	연어	FOOD-I
+2	5	QTY-B
+3	조각	UNIT-B
+4	마셨어요	O
+
+0	버섯	FOOD-B
+1	볶음	FOOD-I
+2	1	QTY-B
+3	접시	UNIT-B
+4	주문했어요	O
+
+0	미트볼	FOOD-B
+1	파스타	FOOD-I
+2	2	QTY-B
+3	접시	UNIT-B
+4	먹었어요	O
+
+0	닭가슴살	FOOD-B
+1	샐러드	FOOD-I
+2	1	QTY-B
+3	그릇	UNIT-B
+4	마셨어요	O
+
+0	토스트	FOOD-B
+1	잼	FOOD-I
+2	2	QTY-B
+3	조각	UNIT-B
+4	주문했어요	O
+
+0	스콘	FOOD-B
+1	크림	FOOD-I
+2	1	QTY-B
+3	조각	UNIT-B
+4	먹었어요	O
+
+0	단호박	FOOD-B
+1	죽	FOOD-I
+2	1	QTY-B
+3	그릇	UNIT-B
+4	마셨어요	O
+
+0	바질	FOOD-B
+1	페스토	FOOD-I
+2	1	QTY-B
+3	통	UNIT-B
+4	주문했어요	O
+
+0	물회	FOOD-B
+1	회	FOOD-I
+2	1	QTY-B
+3	그릇	UNIT-B
+4	먹었어요	O
+
+0	치즈볼	FOOD-B
+1	안주	FOOD-I
+2	3	QTY-B
+3	개	UNIT-B
+4	주문했어요	O
+
+0	와플	FOOD-B
+1	딸기	FOOD-I
+2	1	QTY-B
+3	조각	UNIT-B
+4	먹었어요	O
+
+0	돼지고기	FOOD-B
+1	김치찌개	FOOD-I
+2	1	QTY-B
+3	그릇	UNIT-B
+4	마셨어요	O
+
+0	타르트	FOOD-B
+1	딸기	FOOD-I
+2	1	QTY-B
+3	조각	UNIT-B
+4	주문했어요	O
+
+0	사탕수수	FOOD-B
+1	주스	FOOD-I
+2	1	QTY-B
+3	컵	UNIT-B
+
+0	오늘	O
+1	나는	O
+2	친구	O
+3	와	O
+4	비빔밥	FOOD-B
+5	한	QTY-B
+6	그릇	UNIT-B
+7	과	O
+8	커피	FOOD-B
+9	세	QTY-B
+10	컵	UNIT-B
+11	를	O
+12	마셨어	O
+
+0	내	O
+1	형	O
+2	과	O
+3	팥빙수	FOOD-B
+4	3	QTY-B
+5	그릇	UNIT-B
+6	를	O
+7	나누어	O
+8	먹었어	O
+
+0	나는	O
+1	오늘	O
+2	국밥	FOOD-B
+3	1	QTY-B
+4	그릇	UNIT-B
+5	과	O
+6	김치	FOOD-B
+7	몇	QTY-B
+8	조각	UNIT-B
+9	을	O
+10	먹었어	O
+
+0	점심	O
+1	으로	O
+2	밥	FOOD-B
+3	250	QTY-B
+4	그램	UNIT-B
+5	과	O
+6	된장국	FOOD-B
+7	하나	QTY-B
+8	그릇	UNIT-B
+
+0	나는	O
+1	점심	O
+2	시간에	O
+3	김밥	FOOD-B
+4	300	QTY-B
+5	g	UNIT-B
+6	와	O
+7	미소된장국	FOOD-B
+8	하나	QTY-B
+9	그릇	UNIT-B
+10	을	O
+11	먹었다	O
+
+0	오늘	O
+1	저녁	O
+2	시간에	O
+3	비빔밥	FOOD-B
+4	와	O
+5	된장국	FOOD-B
+6	를	O
+7	같이	O
+8	먹었어	O
+
+0	오늘	O
+1	아침	O
+2	시간에	O
+3	갈비탕	FOOD-B
+4	200	QTY-B
+5	g	UNIT-B
+6	와	O
+7	두유	FOOD-B
+8	한	QTY-B
+9	컵	UNIT-B
+10	을	O
+11	마셨어	O
+
+0	저녁	O
+1	시간에	O
+2	삼겹살	FOOD-B
+3	250	QTY-B
+4	g	UNIT-B
+5	와	O
+6	상추	FOOD-B
+7	3	QTY-B
+8	장	UNIT-B
+
+0	오늘	O
+1	아침	O
+2	시간에	O
+3	치즈토스트	FOOD-B
+4	한	QTY-B
+5	조각	UNIT-B
+6	과	O
+7	오렌지주스	FOOD-B
+8	세	QTY-B
+9	잔	UNIT-B
+10	을	O
+11	먹었어	O
+
+0	나는	O
+1	저녁	O
+2	시간에	O
+3	삼겹살	FOOD-B
+4	250	QTY-B
+5	g	UNIT-B
+6	와	O
+7	상추	FOOD-B
+8	4	QTY-B
+9	장	UNIT-B
+
+0	나는	O
+1	점심	O
+2	시간에	O
+3	불고기	FOOD-B
+4	스파게티	FOOD-I
+5	를	O
+6	150	QTY-B
+7	g	UNIT-B
+8	과	O
+9	프로틴쉐이크	FOOD-B
+10	한	QTY-B
+11	컵	UNIT-B
+12	을	O
+13	마셨어	O
+
+0	오늘	O
+1	나는	O
+2	친구	O
+3	와	O
+4	삼계탕	FOOD-B
+5	한	QTY-B
+6	그릇	UNIT-B
+7	과	O
+8	아메리카노	FOOD-B
+9	세	QTY-B
+10	잔	UNIT-B
+11	를	O
+12	마셨다	O
+
+0	내	O
+1	여동생	O
+2	과	O
+3	자몽빙수	FOOD-B
+4	1	QTY-B
+5	그릇	UNIT-B
+6	를	O
+7	나누어	O
+8	먹었다	O
+
+0	나는	O
+1	오늘	O
+2	김치전	FOOD-B
+3	2	QTY-B
+4	조각	UNIT-B
+5	과	O
+6	막걸리	FOOD-B
+7	한	QTY-B
+8	컵	UNIT-B
+9	을	O
+10	마셨다	O
+
+0	점심	O
+1	으로	O
+2	해물파전	FOOD-B
+3	300	QTY-B
+4	그램	UNIT-B
+5	과	O
+6	된장찌개	FOOD-B
+7	하나	QTY-B
+8	그릇	UNIT-B
+
+0	오늘	O
+1	저녁	O
+2	시간에	O
+3	오징어볶음	FOOD-B
+4	와	O
+5	흑미밥	FOOD-B
+6	를	O
+7	같이	O
+8	먹었다	O
+
+0	오늘	O
+1	아침	O
+2	시간에	O
+3	부대찌개	FOOD-B
+4	150	QTY-B
+5	g	UNIT-B
+6	와	O
+7	요거트	FOOD-B
+8	하나	QTY-B
+9	컵	UNIT-B
+10	을	O
+11	마셨다	O
+
+0	저녁	O
+1	시간에	O
+2	소고기스튜	FOOD-B
+3	200	QTY-B
+4	g	UNIT-B
+5	와	O
+6	샐러드	FOOD-B
+7	반	QTY-B
+8	접시	UNIT-B
+
+0	오늘	O
+1	아침	O
+2	시간에	O
+3	팬케이크	FOOD-B
+4	한	QTY-B
+5	개	UNIT-B
+6	와	O
+7	딸기주스	FOOD-B
+8	두	QTY-B
+9	잔	UNIT-B
+10	을	O
+11	마셨다	O
+
+0	나는	O
+1	저녁	O
+2	시간에	O
+3	소고기불고기	FOOD-B
+4	250	QTY-B
+5	g	UNIT-B
+6	와	O
+7	쌈채소	FOOD-B
+8	5	QTY-B
+9	장	UNIT-B
+
+0	오늘	O
+1	점심	O
+2	시간에	O
+3	치킨너겟	FOOD-B
+4	200	QTY-B
+5	g	UNIT-B
+6	와	O
+7	콜라	FOOD-B
+8	한	QTY-B
+9	컵	UNIT-B
+
+0	나는	O
+1	저녁	O
+2	시간에	O
+3	해물짬뽕	FOOD-B
+4	300	QTY-B
+5	g	UNIT-B
+6	와	O
+7	김치	FOOD-B
+8	두	QTY-B
+9	조각	UNIT-B
+10	을	O
+11	먹었다	O
+
+0	나는	O
+1	오늘	O
+2	순대	FOOD-B
+3	와	O
+4	떡볶이	FOOD-B
+5	를	O
+6	각각	QTY-B
+7	2	QTY-I
+8	그릇	UNIT-B
+9	씩	O
+10	먹었어	O
+
+0	나는	O
+1	오늘	O
+2	빵	FOOD-B
+3	과	O
+4	리조또	FOOD-B
+5	를	O
+6	각각	QTY-B
+7	2	QTY-I
+8	조각	UNIT-B
+9	씩	O
+10	즐겼어	O
+
+0	나는	O
+1	오늘	O
+2	프라이드치킨	FOOD-B
+3	와	O
+4	햄버거	FOOD-B
+5	를	O
+6	각각	QTY-B
+7	4	QTY-I
+8	개	UNIT-B
+9	씩	O
+10	먹었어	O
+
+0	나는	O
+1	오늘	O
+2	스프	FOOD-B
+3	와	O
+4	샌드위치	FOOD-B
+5	를	O
+6	각각	QTY-B
+7	2	QTY-I
+8	그릇	UNIT-B
+9	씩	O
+10	먹었어	O
+
+0	나는	O
+1	오늘	O
+2	요거트	FOOD-B
+3	와	O
+4	스무디	FOOD-B
+5	를	O
+6	각각	QTY-B
+7	3	QTY-I
+8	컵	UNIT-B
+9	씩	O
+10	마셨어	O
+
+0	나는	O
+1	오늘	O
+2	김밥	FOOD-B
+3	와	O
+4	튀김	FOOD-B
+5	을	O
+6	각각	QTY-B
+7	3	QTY-I
+8	개	UNIT-B
+9	씩	O
+10	먹었어	O
+
+0	나는	O
+1	오늘	O
+2	파스타	FOOD-B
+3	와	O
+4	샐러드	FOOD-B
+5	를	O
+6	각각	QTY-B
+7	2	QTY-I
+8	그릇	UNIT-B
+9	씩	O
+10	즐겼어	O
+
+0	나는	O
+1	오늘	O
+2	초밥	FOOD-B
+3	와	O
+4	미소된장국	FOOD-B
+5	을	O
+6	각각	QTY-B
+7	1	QTY-I
+8	접시	UNIT-B
+9	씩	O
+10	먹었어	O
+
+0	나는	O
+1	오늘	O
+2	치킨너겟	FOOD-B
+3	와	O
+4	콜라	FOOD-B
+5	를	O
+6	각각	QTY-B
+7	5	QTY-I
+8	개	UNIT-B
+9	씩	O
+10	마셨어	O
+
+0	나는	O
+1	오늘	O
+2	스파게티	FOOD-B
+3	와	O
+4	브레드스틱	FOOD-B
+5	을	O
+6	각각	QTY-B
+7	2	QTY-I
+8	개	UNIT-B
+9	씩	O
+10	먹었어	O
+
+0	오늘	O
+1	점심	O
+2	시간에	O
+3	불고기	FOOD-B
+4	한	QTY-B
+5	접시	UNIT-B
+6	와	O
+7	김치	FOOD-B
+8	두	QTY-B
+9	그릇	UNIT-B
+10	을	O
+11	먹었어	O
+
+0	나는	O
+1	아침	O
+2	시간에	O
+3	팬케이크	FOOD-B
+4	두	QTY-B
+5	조각	UNIT-B
+6	와	O
+7	우유	FOOD-B
+8	한	QTY-B
+9	컵	UNIT-B
+10	을	O
+11	마셨어	O
+
+0	오늘	O
+1	저녁	O
+2	시간에	O
+3	스파게티	FOOD-B
+4	한	QTY-B
+5	접시	UNIT-B
+6	와	O
+7	샐러드	FOOD-B
+8	한	QTY-B
+9	그릇	UNIT-B
+10	을	O
+11	먹었어	O
+
+0	나는	O
+1	점심	O
+2	시간에	O
+3	샌드위치	FOOD-B
+4	세	QTY-B
+5	개	UNIT-B
+6	와	O
+7	주스	FOOD-B
+8	두	QTY-B
+9	컵	UNIT-B
+10	를	O
+11	마셨어	O
+
+0	오늘	O
+1	아침	O
+2	시간에	O
+3	계란후라이	FOOD-B
+4	두	QTY-B
+5	개	UNIT-B
+6	와	O
+7	토스트	FOOD-B
+8	한	QTY-B
+9	조각	UNIT-B
+10	을	O
+11	먹었어	O
+
+0	나는	O
+1	저녁	O
+2	시간에	O
+3	스테이크	FOOD-B
+4	200	QTY-B
+5	g	UNIT-B
+6	와	O
+7	감자튀김	FOOD-B
+8	세	QTY-B
+9	개	UNIT-B
+10	를	O
+11	먹었어	O
+
+0	오늘	O
+1	점심	O
+2	시간에	O
+3	볶음밥	FOOD-B
+4	한	QTY-B
+5	그릇	UNIT-B
+6	과	O
+7	장어구이	FOOD-B
+8	한	QTY-B
+9	조각	UNIT-B
+10	을	O
+11	먹었어	O
+
+0	나는	O
+1	아침	O
+2	시간에	O
+3	오믈렛	FOOD-B
+4	한	QTY-B
+5	접시	UNIT-B
+6	와	O
+7	주스	FOOD-B
+8	네	QTY-B
+9	컵	UNIT-B
+10	을	O
+11	마셨어	O
+
+0	오늘	O
+1	저녁	O
+2	시간에	O
+3	된장찌개	FOOD-B
+4	한	QTY-B
+5	그릇	UNIT-B
+6	과	O
+7	밥	FOOD-B
+8	한	QTY-B
+9	공기	UNIT-B
+10	를	O
+11	먹었어	O
+
+0	나는	O
+1	점심	O
+2	시간에	O
+3	피자	FOOD-B
+4	한	QTY-B
+5	조각	UNIT-B
+6	과	O
+7	콜라	FOOD-B
+8	한	QTY-B
+9	컵	UNIT-B
+10	을	O
+11	마셨어	O
+
+0	오늘	O
+1	아침	O
+2	시간에	O
+3	치킨	FOOD-B
+4	한	QTY-B
+5	조각	UNIT-B
+6	과	O
+7	샐러드	FOOD-B
+8	한	QTY-B
+9	그릇	UNIT-B
+10	을	O
+11	먹었어	O
+
+0	나는	O
+1	저녁	O
+2	시간에	O
+3	초밥	FOOD-B
+4	세	QTY-B
+5	개	UNIT-B
+6	와	O
+7	미소된장국	FOOD-B
+8	한	QTY-B
+9	그릇	UNIT-B
+10	을	O
+11	먹었어	O
+
+0	오늘	O
+1	점심	O
+2	시간에	O
+3	라면	FOOD-B
+4	한	QTY-B
+5	그릇	UNIT-B
+6	과	O
+7	김밥	FOOD-B
+8	두	QTY-B
+9	개	UNIT-B
+10	를	O
+11	먹었어	O
+
+0	나는	O
+1	아침	O
+2	시간에	O
+3	스무디	FOOD-B
+4	한	QTY-B
+5	컵	UNIT-B
+6	과	O
+7	토스트	FOOD-B
+8	두	QTY-B
+9	조각	UNIT-B
+10	을	O
+11	먹었어	O
+
+0	오늘	O
+1	저녁	O
+2	시간에	O
+3	볶음면	FOOD-B
+4	한	QTY-B
+5	접시	UNIT-B
+6	와	O
+7	해물	FOOD-B
+8	튀김	FOOD-I
+9	세	QTY-B
+10	개	UNIT-B
+11	를	O
+12	먹었어	O
+
+0	나는	O
+1	점심	O
+2	시간에	O
+3	햄버거	FOOD-B
+4	한	QTY-B
+5	개	UNIT-B
+6	와	O
+7	감자튀김	FOOD-B
+8	세	QTY-B
+9	개	UNIT-B
+10	를	O
+11	먹었어	O
+
+0	오늘	O
+1	아침	O
+2	시간에	O
+3	브리또	FOOD-B
+4	한	QTY-B
+5	개	UNIT-B
+6	와	O
+7	사과	FOOD-B
+8	한	QTY-B
+9	개	UNIT-B
+10	를	O
+11	먹었어	O
+
+0	나는	O
+1	저녁	O
+2	시간에	O
+3	닭갈비	FOOD-B
+4	200	QTY-B
+5	g	UNIT-B
+6	와	O
+7	상추	
+
+0	오늘	O
+1	나는	O
+2	카레라이스	FOOD-B
+3	1	QTY-B
+4	그릇	UNIT-B
+5	과	O
+6	사과주스	FOOD-B
+7	세	QTY-B
+8	잔	UNIT-B
+9	을	O
+10	마셨다	O
