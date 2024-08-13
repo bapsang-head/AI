@@ -92,6 +92,14 @@ def read_input_file(pred_config):
 
     return lines
 
+def process_input_text(input_text):
+    # 입력된 텍스트를 처리하는 함수
+    line = input_text.strip()  # 텍스트의 앞뒤 공백 제거
+    line = add_space_around_units(line)  # 특정 단위 주위에 공백 추가
+    words = line.split()  # 공백을 기준으로 단어 분리
+    # words = mecab.morphs(line)  # 형태소 단위로 분리 (필요 시 주석 해제)
+    return words  # 리스트 반환
+
 def convert_input_file_to_tensor_dataset(lines,
                                          pred_config,
                                          args,
@@ -167,6 +175,81 @@ def convert_input_file_to_tensor_dataset(lines,
     return dataset
 
 
+def convert_input_list_to_tensor_dataset(lines,
+                                         pred_config,
+                                         args,
+                                         tokenizer,
+                                         pad_token_label_id,
+                                         cls_token_segment_id=0,
+                                         pad_token_segment_id=0,
+                                         sequence_a_segment_id=0,
+                                         mask_padding_with_zero=True):
+    # 현재 모델 유형에 따라 설정
+    cls_token = tokenizer.cls_token
+    sep_token = tokenizer.sep_token
+    unk_token = tokenizer.unk_token
+    pad_token_id = tokenizer.pad_token_id
+
+    all_input_ids = []
+    all_attention_mask = []
+    all_token_type_ids = []
+    all_slot_label_mask = []
+
+    for words in lines:  # lines는 리스트의 리스트 형태입니다.
+        tokens = []
+        slot_label_mask = []
+        for word in words:
+            word_tokens = tokenizer.tokenize(word)
+            if not word_tokens:
+                word_tokens = [unk_token]  # 잘못 인코딩된 단어 처리
+            tokens.extend(word_tokens)
+            slot_label_mask.extend([0] + [pad_token_label_id] * (len(word_tokens) - 1))
+
+        # [CLS] 및 [SEP]를 고려
+        special_tokens_count = 2
+        if len(tokens) > args.max_seq_len - special_tokens_count:
+            tokens = tokens[: (args.max_seq_len - special_tokens_count)]
+            slot_label_mask = slot_label_mask[:(args.max_seq_len - special_tokens_count)]
+
+        # [SEP] 토큰 추가
+        tokens += [sep_token]
+        token_type_ids = [sequence_a_segment_id] * len(tokens)
+        slot_label_mask += [pad_token_label_id]
+
+        # [CLS] 토큰 추가
+        tokens = [cls_token] + tokens
+        token_type_ids = [cls_token_segment_id] + token_type_ids
+        slot_label_mask = [pad_token_label_id] + slot_label_mask
+
+        input_ids = tokenizer.convert_tokens_to_ids(tokens)
+
+        # 마스크 설정
+        attention_mask = [1 if mask_padding_with_zero else 0] * len(input_ids)
+
+        # 시퀀스 길이에 맞게 제로 패딩
+        padding_length = args.max_seq_len - len(input_ids)
+        input_ids = input_ids + ([pad_token_id] * padding_length)
+        attention_mask = attention_mask + ([0 if mask_padding_with_zero else 1] * padding_length)
+        token_type_ids = token_type_ids + ([pad_token_segment_id] * padding_length)
+        slot_label_mask = slot_label_mask + ([pad_token_label_id] * padding_length)
+
+        all_input_ids.append(input_ids)
+        all_attention_mask.append(attention_mask)
+        all_token_type_ids.append(token_type_ids)
+        all_slot_label_mask.append(slot_label_mask)
+
+    # 텐서로 변환
+    all_input_ids = torch.tensor(all_input_ids, dtype=torch.long)
+    all_attention_mask = torch.tensor(all_attention_mask, dtype=torch.long)
+    all_token_type_ids = torch.tensor(all_token_type_ids, dtype=torch.long)
+    all_slot_label_mask = torch.tensor(all_slot_label_mask, dtype=torch.long)
+
+    dataset = TensorDataset(all_input_ids, all_attention_mask, all_token_type_ids, all_slot_label_mask)
+
+    return dataset
+
+
+
 
 def predict(user_input, pred_config):
     # 모델과 인자 로드
@@ -177,13 +260,13 @@ def predict(user_input, pred_config):
     logger.info(args)
     
     # 사용자 입력을 리스트 형태로 변환
-    lines = [user_input]  # 입력을 리스트로 변환
+    lines = [process_input_text(user_input)]  # 입력을 리스트로 변환
+    print(lines)
     pad_token_label_id = torch.nn.CrossEntropyLoss().ignore_index  # 패딩 토큰의 라벨 ID 설정
     tokenizer = load_tokenizer(args)  # 토크나이저 로드
     
     # 입력을 TensorDataset으로 변환
-    dataset = convert_input_file_to_tensor_dataset(lines, pred_config, args, tokenizer, pad_token_label_id)  # TensorDataset으로 변환
-
+    dataset = convert_input_list_to_tensor_dataset(lines, pred_config, args, tokenizer, pad_token_label_id)  # TensorDataset으로 변환
     # 예측 수행
     sampler = SequentialSampler(dataset)  # 시퀀스 샘플러 생성
     data_loader = DataLoader(dataset, sampler=sampler, batch_size=pred_config.batch_size)  # DataLoader 생성
@@ -242,7 +325,7 @@ def predict(user_input, pred_config):
                     line += "[{}:{}] ".format(word, pred)  # 단어와 예측 라벨 추가
 
         output_lines.append(line.strip())  # 결과 리스트에 추가
-
+    print(output_lines)
     logger.info("Prediction Done!")  # 예측 완료 로그 출력
     return output_lines  # 출력 결과 반환
 
@@ -259,4 +342,4 @@ if __name__ == "__main__":
     parser.add_argument("--no_cuda", action="store_true", help="Avoid using CUDA when available")
 
     pred_config = parser.parse_args()
-    predict(pred_config)
+    predict("나는 치킨 한마리를 먹었어",pred_config)
