@@ -1,6 +1,7 @@
 # KoBERT-NER-Diet
 
-KoBERT를 이용한 Diet Domain 한국어 Named Entity Recognition(NER) 작업을 위한 가이드입니다. 🤗 `Huggingface Transformers` 라이브러리를 활용하여 KoBERT를 손쉽게 사용할 수 있습니다.
+KoBERT를 이용한 Diet Domain 한국어 Named Entity Recognition(NER) 작업을 위한 가이드입니다. 
+🤗 `Huggingface Transformers` 라이브러리를 활용하여 DietKoBERT를 손쉽게 사용할 수 있게 설정해두었습니다.
 
 ## How to use KoBERT on Huggingface Transformers Library
 
@@ -15,6 +16,19 @@ from kobert_tokenizer import KoBERTTokenizer
 def load_tokenizer(args):
     bert_tokenizer = KoBERTTokenizer.from_pretrained(pretrained_model_name_or_path="skt/kobert-base-v1")
     return bert_tokenizer
+
+def load_model(pred_config, args, device):
+    # Load model from Hugging Face Hub using the model name
+    model_name = "tgool/Dietkobert"  # Hugging Face에서 올린 모델 이름
+    try:
+        model = AutoModelForTokenClassification.from_pretrained(model_name)  # Hugging Face Hub에서 모델 로드
+        model.to(device)
+        model.eval()
+        logger.info("***** Model Loaded from Hugging Face Hub *****")
+    except Exception as e:
+        raise Exception(f"Failed to load model from Hugging Face Hub: {str(e)}")
+
+    return model
 ```
 
 ## Usage
@@ -35,9 +49,9 @@ $ python3 predict.py --input_file {INPUT_FILE_PATH} --output_file {OUTPUT_FILE_P
 
 | 모델                        | Slot F1 (%) |
 |---------------------------|-------------|
-| KoBERT                    | 99.00       |
-| DistilKoBERT              | 90.00       |
-| Bert-Multilingual         | 99.00       |
+| KoBERT                    | 98.00       |
+| DistilKoBERT              | 96.00       |
+| Bert-Multilingual         | 98.00       |
 
 ## 데이터 설명
 - **FOOD-B**: 음식 시작 태그
