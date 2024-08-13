@@ -12,7 +12,8 @@ def process_NER():
     ner_result = ner_model(data["user_input"])
     
     # NER 결과를 기반으로 GPT에 데이터 전송
-    ner_result_str = ", ".join([f'{{"word": "{item["word"]}", "tag": "{item["tag"]}"}}' for item in ner_result])
+    ner_result_str = ner_result
+    #ner_result_str = ", ".join([f'{{"word": "{item["word"]}", "tag": "{item["tag"]}"}}' for item in ner_result])
     prompt = (
         f'The input text is: "{data["user_input"]}".\n'
         f'The NER output is: [{ner_result_str}].\n'

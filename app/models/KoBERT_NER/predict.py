@@ -24,19 +24,16 @@ def get_device(pred_config):
 def get_args(pred_config):
     return torch.load(os.path.join(pred_config.model_dir, 'training_args.bin'))
 
-
 def load_model(pred_config, args, device):
-    # Check whether model exists
-    if not os.path.exists(pred_config.model_dir):
-        raise Exception("Model doesn't exists! Train first!")
-
+    # Load model from Hugging Face Hub using the model name
+    model_name = "tgool/Dietkobert"  # Hugging Face에서 올린 모델 이름
     try:
-        model = AutoModelForTokenClassification.from_pretrained(args.model_dir)  # Config will be automatically loaded from model_dir
+        model = AutoModelForTokenClassification.from_pretrained(model_name)  # Hugging Face Hub에서 모델 로드
         model.to(device)
         model.eval()
-        logger.info("***** Model Loaded *****")
-    except:
-        raise Exception("Some model files might be missing...")
+        logger.info("***** Model Loaded from Hugging Face Hub *****")
+    except Exception as e:
+        raise Exception(f"Failed to load model from Hugging Face Hub: {str(e)}")
 
     return model
 
@@ -171,20 +168,20 @@ def convert_input_file_to_tensor_dataset(lines,
 
 
 
-def predict(pred_config):
+def predict(user_input, pred_config):
     # 모델과 인자 로드
     args = get_args(pred_config)  # 모델 학습 시 사용된 인자 불러오기
     device = get_device(pred_config)  # 사용할 디바이스 설정 (CUDA 또는 CPU)
     model = load_model(pred_config, args, device)  # 모델 로드
     label_lst = get_labels(args)  # 라벨 리스트 불러오기
     logger.info(args)
-    # 예측 결과를 JSON 배열로 저장할 리스트
-    json_results = []
-
-    # 입력 파일을 TensorDataset으로 변환
+    
+    # 사용자 입력을 리스트 형태로 변환
+    lines = [user_input]  # 입력을 리스트로 변환
     pad_token_label_id = torch.nn.CrossEntropyLoss().ignore_index  # 패딩 토큰의 라벨 ID 설정
     tokenizer = load_tokenizer(args)  # 토크나이저 로드
-    lines = read_input_file(pred_config)  # 입력 파일 읽기
+    
+    # 입력을 TensorDataset으로 변환
     dataset = convert_input_file_to_tensor_dataset(lines, pred_config, args, tokenizer, pad_token_label_id)  # TensorDataset으로 변환
 
     # 예측 수행
@@ -197,9 +194,11 @@ def predict(pred_config):
     for batch in tqdm(data_loader, desc="Predicting"):  # 데이터 로더를 통해 배치 단위로 예측 수행
         batch = tuple(t.to(device) for t in batch)  # 배치를 디바이스에 올리기
         with torch.no_grad():  # 그라디언트 계산 비활성화
-            inputs = {"input_ids": batch[0],  # 입력 ID
-                    "attention_mask": batch[1],  # 어텐션 마스크
-                    "labels": None}  # 라벨은 없음
+            inputs = {
+                "input_ids": batch[0],  # 입력 ID
+                "attention_mask": batch[1],  # 어텐션 마스크
+                "labels": None  # 라벨은 없음
+            }
             if args.model_type != "distilkobert":  # 모델 타입이 distilkobert가 아닐 경우
                 inputs["token_type_ids"] = batch[2]  # 토큰 타입 ID 추가
             outputs = model(**inputs)  # 모델 입력 및 출력 얻기
@@ -220,45 +219,32 @@ def predict(pred_config):
         for j in range(preds.shape[1]):
             if all_slot_label_mask[i, j] != pad_token_label_id:  # 패딩 토큰이 아닌 경우
                 preds_list[i].append(slot_label_map[preds[i][j]])  # 예측값 추가
-    # 출력 파일에 쓰기
-    with open(pred_config.output_file, "w", encoding="utf-8") as f:
-        for words, preds in zip(lines, preds_list):  # 입력 단어와 예측값 묶기
-            line = ""
-            json_line = []  # JSON 형식으로 저장할 리스트
-            for idx, (word, pred) in enumerate(zip(words, preds)):  # 단어와 예측 라벨 묶기
-                if pred == 'O':  # 예측 라벨이 'O'인 경우
-                    line += word + " "  # 단어만 추가
-                    # json_line.append({"word": word, "label": pred})  # JSON 형식 추가
-                else:  # 예측 라벨이 'O'가 아닌 경우
-                    if pred == 'FOOD-B':
-                        # FOOD-B 다음에 FOOD-I가 있는지 체크
-                        if idx + 1 < len(preds) and preds[idx + 1] == 'FOOD-I':
-                            line += "[{}:{}] ".format(word, pred)  # FOOD-B 추가
-                            json_line.append({"word": word, "label": pred})  # JSON 형식 추가
-                        else:
-                            # FOOD-B 다음에 FOOD-I가 없을 경우, 조사 제거
-                            word = remove_last_josa(word)
-                            line += "[{}:{}] ".format(word, pred)  # 단어와 예측 라벨 추가
-                            json_line.append({"word": word, "label": pred})  # JSON 형식 추가
-                    elif pred == 'FOOD-I':
-                        # FOOD-I의 경우는 항상 조사 제거
+
+    # 결과를 출력할 변수 초기화
+    output_lines = []
+
+    for words, preds in zip(lines, preds_list):  # 입력 단어와 예측값 묶기
+        line = ""
+        for idx, (word, pred) in enumerate(zip(words, preds)):  # 단어와 예측 라벨 묶기
+            if pred == 'O':  # 예측 라벨이 'O'인 경우
+                line += word + " "  # 단어만 추가
+            else:  # 예측 라벨이 'O'가 아닌 경우
+                if pred == 'FOOD-B':
+                    if idx + 1 < len(preds) and preds[idx + 1] == 'FOOD-I':
+                        line += "[{}:{}] ".format(word, pred)  # FOOD-B 추가
+                    else:
                         word = remove_last_josa(word)
                         line += "[{}:{}] ".format(word, pred)  # 단어와 예측 라벨 추가
-                        json_line.append({"word": word, "label": pred})  # JSON 형식 추가
-                    else:
-                        # 다른 라벨의 경우
-                        line += "[{}:{}] ".format(word, pred)  # 단어와 예측 라벨 추가
-                        json_line.append({"word": word, "label": pred})  # JSON 형식 추가
+                elif pred == 'FOOD-I':
+                    word = remove_last_josa(word)
+                    line += "[{}:{}] ".format(word, pred)  # 단어와 예측 라벨 추가
+                else:
+                    line += "[{}:{}] ".format(word, pred)  # 단어와 예측 라벨 추가
 
-            f.write("{}\n".format(line.strip()))  # 파일에 쓰기
-            json_results.append(json_line)  # 전체 JSON 결과에 추가
+        output_lines.append(line.strip())  # 결과 리스트에 추가
 
-
-
-    # JSON 형식으로 변환된 데이터를 변수에 저장
-    json_data = json.dumps(json_results, ensure_ascii=False, indent=4)
-    print(json_data)  # JSON 형식으로 출력
     logger.info("Prediction Done!")  # 예측 완료 로그 출력
+    return output_lines  # 출력 결과 반환
 
 
 if __name__ == "__main__":
