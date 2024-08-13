@@ -1,33 +1,48 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, Response
 from app.services.gpt_service import generate_response
+import json
+import logging
 
-second_GPT_API_blueprint = Blueprint('result', __name__)
+logger = logging.getLogger(__name__)
+
+second_GPT_API_blueprint = Blueprint('second_GPT_API', __name__)
 
 @second_GPT_API_blueprint.route('/', methods=['POST'])
-def process_result():
+def process_second_GPT_API():
     data = request.json
-    
-    # 음식 및 단위 정보를 기반으로 프롬프트 생성
-    food_data = data["data"]
-    food_items = []
 
-    # 음식과 단위가 교대로 나오므로, 이를 매칭하여 food_items에 추가
-    for i in range(0, len(food_data), 2):
+    logger.info(f"Received data: {data}")
+
+    food_items = []
+    for i in range(0, len(data["data"]), 2):
         food_items.append({
-            "food": food_data[i]["word"],
-            "unit": food_data[i + 1]["word"]
+            "food": data["data"][i]["word"],
+            "unit": data["data"][i + 1]["word"]
         })
 
     prompt = (
         f'The following is a list of foods and their units: {food_items}.\n'
         'For each food item, convert the unit to grams and provide the nutritional information per 100g. '
+        'However, keep the original unit in the JSON output as provided in the input. '
         'Return the results in JSON format with each food item and its corresponding nutritional values. '
         'The JSON format should look like this: '
-        '[{"food": "example_food", "unit": "example_unit", "gram": "example_gram", "calories": "example_calories", '
-        '"carbohydrates": "example_carbohydrates", "protein": "example_protein", "fat": "example_fat"}]. '
-        'Do not include any additional text, only return the JSON.'
+        '[{"food": "example_food", "unit": "example_unit", "gram": 100, '
+        '"calories": 100, "carbohydrates": 100, '
+        '"protein": 100, "fat": 100}]. '
+        'Respond only with a valid JSON array. Do not include any additional text or explanation. '
+        'The values should be realistic and accurate based on the food items.'
     )
 
     gpt_response = generate_response(prompt)
 
-    return jsonify({"data": gpt_response})
+    try:
+        gpt_response_json = json.loads(gpt_response)
+        response_json = json.dumps({"data": gpt_response_json}, ensure_ascii=False, indent=4)
+        logger.info(f"Received response from OpenAI: {gpt_response}")
+        return Response(response_json, mimetype='application/json')
+    except json.JSONDecodeError:
+        logger.error("Error converting response to JSON: No JSON object found in GPT response")
+        return jsonify({
+            "error": "Invalid JSON response from OpenAI",
+            "gpt_response": gpt_response
+        }), 500

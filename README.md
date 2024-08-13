@@ -1,59 +1,70 @@
 # AI
 
-### 현재 진행 상황 (2024.07.31 기준)
-- Dockerfile 실행해보기 *
+## 현재 진행 상황 (2024.08.09 기준)
 - RAG 기술은 좀 더 공부하고 넣을 예정
-- GPT API 호출 결과에서 여러가지의 오류들을 시도 해보기
-- endpoint에서 출력 형식 다시 맞추기 (README 처럼 만들기) *
+- GPT API 호출 결과에서 여러가지의 오류들을 시도하여 증진시키는 중
+    - first 호출은 거의 완료된 상태
+- 보안과 관련된 과제는 현재 NER 모델 적용되면 적용 시킬 예정
 
 ## 환경 변수 설정
 이 프로젝트는 환경 변수를 사용합니다.  
 `.env` 파일을 프로젝트 루트 디렉토리에 생성하고 gpt 키값을 추가해야 정상적으로 동작합니다.
 
-### GPT model은 GPT 4o로 통일
-
-### kobert
-- 유저 raw 입력 문장을 ko-bert를 통해 인식한 개체명들을 출력하는 함수는 app/service/ner_service.py에 있는 ner_model 함수이다.
-- 여기서 출력하는 내용은 하단에 있는 첫번째 GPT 호출의 입력과 동일하다.
+## GPT model
+- GPT model은 GPT 4o로 통일
 
 
-### 첫번째 GPT 호출
-#### 1. 입력
-- 개체명 인식을 하고 태깅된 문장을 GPT를 통해 예외케이스까지 잡아는 형식으로 진행한다
-    ```json
+
+## 첫번째 GPT 호출 (app/api/endpoints/first_GPT_API.py)
+### 1. 서버에게 유저 입력 문장 요청 
+- 서버에 POST로 입력 문장을 요청한다.
+- 이를 NER model에 넘겨준다.
+- 입력 문장의 예시:
+    ```json 
     {
-        "user_input": "나는 점심으로 삽결살 1인분과 소주 한잔을 먹었어",
-        "data": [
-                {"word": "삽결살 ", "tag": "B-FOOD"},
-                {"word": "1", "tag": "B-QTY"},
-                {"word": "인분", "tag": "B-UNIT"},
-                {"word": "소주", "tag": "B-FOOD"},
-                {"word": "한", "tag": "B-QTY"},
-                {"word": "잔", "tag": "B-UNIT"}
-        ]
+        "user_input": "나는 점심으로 삼겹살 1인분과 소주 한잔을 먹었어"
     }
     ``` 
-#### 2. 응답
-- NER 모델이 잡아내지 못한 부분까지 잡아내는 응답을 만들어낸다.
+### 2. NER model (app/service/ner_service.py)
+- NER model이 앞선 입력 받은 문장 토대로 개체명을 인식한다.
+- 유저 raw 입력 문장을 ko-bert를 통해 인식한 개체명들을 출력하는 함수는 ner_model(user_input) 함수이다.
+- 입력 문장은 위의 1번과 같다.
+- 응답 결과의 형식은 다음과 같이 나온다. (문장에 태깅된 형태로 출력된다.)
     ```json
-    { 
-        "data":[
-            {"food": "삼겹살", "quantity": "1", "unit": "인분"},
-            {"food": "소주", "quantity": "한", "unit": "잔"}
+    "나는 점심으로 [삽결살:FOOD-B] [1:QTY-B] [인분:UNIT-B] 과 [소주:FOOD-B] [한:QTY-B] [잔:UNIT-B] 을 먹었어"
+    ```
+
+### 3. GPT_API 
+- NER 모델이 잡아내지 못한 부분까지 잡아내는 응답을 만들어낸다.
+- 결과 형식은 다음과 같다.
+    ```json
+    {
+        "data": [
+            {
+                "food": "삼겹살",
+                "quantity": "1",
+                "unit": "인분"
+            },
+            {
+                "food": "소주",
+                "quantity": "한",
+                "unit": "잔"
+            }
         ]
     }
     ```
-### 두번째 GPT 호출
+
+### 두번째 GPT 호출 (app/api/endpoints/second_GPT_API.py)
 #### 1. 입력
 - 음식, 단위 정보가 DB에 없는 경우 호출하는 경우이다.
-- 무조건 음식명과 단위를 전부 넘겨줘야 한다.
+- 무조건 음식명과 단위를 전부 넘겨줘야 한다. (null인 경우는 없다.)
     ```json
     {
         "data": [
-            {"index": 1, "word": "삽겹살", "tag": "B-FOOD"},
-            {"index": 2, "word": "인분", "tag": "B-UNIT"},
-            {"index": 3, "word": "볶음밥", "tag": "B-FOOD"},
-            {"index": 4, "word": "공기", "tag": "B-UNIT"},
+            {"word": "삽겹살", "tag": "FOOD"},
+            {"word": "인분", "tag": "UNIT"},
+            {"word": "볶음밥", "tag": "FOOD"},
+            {"word": "공기", "tag": "UNIT"},
         ]
     }
     ``` 

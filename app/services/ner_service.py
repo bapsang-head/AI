@@ -2,6 +2,8 @@ import argparse
 from ..models.KoBERT_NER.predict import predict  # predict.py에서 predict 함수 임포트
 
 def ner_model(user_input):
+    if not user_input:
+        return []
     # ArgumentParser 설정
     parser = argparse.ArgumentParser()
     parser.add_argument("--input_file", default="sample_pred_in.txt", type=str, help="Input file for prediction")
