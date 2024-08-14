@@ -258,7 +258,6 @@ def predict(user_input, pred_config):
     model = load_model(pred_config, args, device)  # 모델 로드
     label_lst = get_labels(args)  # 라벨 리스트 불러오기
     logger.info(args)
-    
     # 사용자 입력을 리스트 형태로 변환
     lines = [process_input_text(user_input)]  # 입력을 리스트로 변환
     print(lines)
@@ -329,15 +328,41 @@ def predict(user_input, pred_config):
     logger.info("Prediction Done!")  # 예측 완료 로그 출력
     return output_lines  # 출력 결과 반환
 
+def modify_training_args(model_dir, new_data_dir):
+    # 1. training_args.bin 파일 로드
+    training_args_path = os.path.join(model_dir, 'training_args.bin')
+    
+    # 파일이 존재하는지 확인
+    if not os.path.exists(training_args_path):
+        raise FileNotFoundError(f"{training_args_path} 파일이 존재하지 않습니다.")
+    
+    # 2. training_args.bin 파일 로드
+    args = torch.load(training_args_path)
+
+    # 3. 원하는 인자 수정 (예: data_dir 수정)
+    args.data_dir = new_data_dir
+
+    # 4. 수정된 인자를 다시 저장
+    torch.save(args, training_args_path)
+    print(f"{training_args_path} 파일의 data_dir을 {new_data_dir}로 수정했습니다.")
+
 
 if __name__ == "__main__":
     init_logger()
+    # 파일 경로 설정
+    #file_path = './app/models/KoBERT_NER/model/training_args.bin'
+
+    # 파일 로드
+    #args = torch.load(file_path)
+
+    # 내용 출력
+    #print(args)
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--input_file", default="sample_pred_in.txt", type=str, help="Input file for prediction")
     parser.add_argument("--output_file", default="sample_pred_out.txt", type=str, help="Output file for prediction")
-    parser.add_argument("--model_dir", default="./model", type=str, help="Path to save, load model")
-
+    parser.add_argument("--model_dir", default="./app/models/KoBERT_NER/model", type=str, help="Path to save, load model")
+    parser.add_argument("--data_dir", default="./app/models/KoBERT_NER/data", type=str, help="Path to load label")
     parser.add_argument("--batch_size", default=32, type=int, help="Batch size for prediction")
     parser.add_argument("--no_cuda", action="store_true", help="Avoid using CUDA when available")
 

@@ -2,7 +2,6 @@ Flask
 python-dotenv
 openai==0.28
 requests
-
 #For NER Model library
 # KoBERT 패키지
 git+https://github.com/SKTBrain/KoBERT.git#egg=kobert_tokenizer&subdirectory=kobert_hf

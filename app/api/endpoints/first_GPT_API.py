@@ -29,7 +29,11 @@ def process_NER():
 
         # ner_result의 실제 구조를 확인하기 위한 로그 추가
         logging.info("NER result structure: %s", json.dumps(ner_result, ensure_ascii=False))
-
+        
+        #ner_result가 list type이라 문자열로 변환
+        if not isinstance(ner_result, str):
+         ner_result = str(ner_result) if ner_result is not None else ''
+        
         # NER 결과를 파싱하여 필요한 정보 추출
         matches = re.findall(r'\[(.+?):(.+?)\]', ner_result)
         ner_result_parsed = [{"word": match[0], "tag": match[1]} for match in matches]
