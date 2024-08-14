@@ -11,7 +11,7 @@ import json
 from torch.utils.data import TensorDataset, DataLoader, SequentialSampler
 from transformers import AutoModelForTokenClassification
 
-from utils import init_logger, load_tokenizer, get_labels
+from .utils import init_logger, load_tokenizer, get_labels
 
 logger = logging.getLogger(__name__)
 
