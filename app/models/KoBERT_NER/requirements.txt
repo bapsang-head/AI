@@ -6,6 +6,6 @@ torch
 numpy
 seqeval
 sentencepiece
-konlpy
-konlpy mecab-python3
-mecab-ko-dic
+#konlpy
+#konlpy mecab-python3
+#mecab-ko-dic
