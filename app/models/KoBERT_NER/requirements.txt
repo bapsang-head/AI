@@ -1,8 +1,3 @@
-Flask
-python-dotenv
-openai==0.28
-requests
-#For NER Model library
 # KoBERT 패키지
 git+https://github.com/SKTBrain/KoBERT.git#egg=kobert_tokenizer&subdirectory=kobert_hf
 tqdm
@@ -11,6 +6,6 @@ torch
 numpy
 seqeval
 sentencepiece
-#konlpy
-#konlpy mecab-python3
-#mecab-ko-dic
+konlpy
+konlpy mecab-python3
+mecab-ko-dic

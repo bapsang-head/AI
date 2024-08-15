@@ -1,0 +1,1609 @@
+롯데리아 FOOD-B FOOD-B
+빅불버거 FOOD-I FOOD-I
+1 QTY-B QTY-B
+개 UNIT-B UNIT-B
+먹었어. O O
+
+파파이스 FOOD-B FOOD-B
+후라이드치킨 FOOD-I FOOD-I
+2 QTY-B QTY-B
+마리 UNIT-B UNIT-B
+주문했어. O O
+
+투썸플레이스 FOOD-B FOOD-B
+카페모카 FOOD-I FOOD-I
+1 QTY-B QTY-B
+잔 UNIT-B UNIT-B
+마심. O O
+
+할리스커피 FOOD-B FOOD-B
+바닐라라떼 FOOD-I FOOD-I
+1 QTY-B QTY-B
+잔 UNIT-B UNIT-B
+먹었어. O O
+
+피자스쿨 FOOD-B FOOD-B
+불고기피자 FOOD-I FOOD-I
+1 QTY-B QTY-B
+판 UNIT-B UNIT-B
+먹었어. O O
+
+홍콩반점 FOOD-B FOOD-B
+짬뽕 FOOD-I FOOD-I
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+먹었어. O O
+
+베스킨라빈스 FOOD-B FOOD-B
+망고 FOOD-I FOOD-I
+1 QTY-B QTY-B
+스쿱 UNIT-B UNIT-B
+주문했어. O O
+
+삼겹살집 FOOD-B FOOD-B
+삼겹살 FOOD-I FOOD-I
+1 QTY-B QTY-B
+인분 UNIT-B UNIT-B
+먹었어. O O
+
+김밥천국 FOOD-B FOOD-B
+참치김밥 FOOD-I FOOD-I
+1 QTY-B QTY-B
+줄 UNIT-B UNIT-B
+먹었어. O O
+
+버거킹 FOOD-B FOOD-B
+킹너겟 FOOD-I FOOD-I
+3 QTY-B QTY-B
+개 UNIT-B UNIT-B
+먹었어. O O
+
+피자헛 FOOD-B FOOD-B
+고구마피자 FOOD-I FOOD-I
+1 QTY-B QTY-B
+판 UNIT-B UNIT-B
+주문했어. O O
+
+스타벅스 FOOD-B FOOD-B
+카푸치노 FOOD-I FOOD-I
+2 QTY-B QTY-B
+잔 UNIT-B UNIT-B
+마심. O O
+
+이디야 FOOD-B FOOD-B
+카라멜마키아토 FOOD-I FOOD-I
+1 QTY-B QTY-B
+잔 UNIT-B UNIT-B
+먹었어. O O
+
+맥도날드 FOOD-B FOOD-B
+상하이너겟 FOOD-I FOOD-I
+1 QTY-B QTY-B
+개 UNIT-B UNIT-B
+마심. O O
+
+도미노피자 FOOD-B FOOD-B
+콤비네이션피자 FOOD-I FOOD-I
+1 QTY-B QTY-B
+판 UNIT-B UNIT-B
+주문했어. O O
+
+던킨도너츠 FOOD-B FOOD-B
+초콜릿 FOOD-I FOOD-I
+2 QTY-B QTY-B
+개 UNIT-B UNIT-B
+먹었어. O O
+
+파리바게뜨 FOOD-B FOOD-B
+딸기케이크 FOOD-I FOOD-I
+1 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+주문했어. O O
+
+버거킹 FOOD-B FOOD-B
+치킨너겟 FOOD-I FOOD-I
+2 QTY-B QTY-B
+개 UNIT-B UNIT-B
+먹었어. O O
+
+교촌치킨 FOOD-B FOOD-B
+양념치킨 FOOD-I FOOD-I
+1 QTY-B QTY-B
+마리 UNIT-B UNIT-B
+마심. O O
+
+이디야 FOOD-B FOOD-B
+프라푸치노 FOOD-I FOOD-I
+1 QTY-B QTY-B
+잔 UNIT-B UNIT-B
+주문했어. O O
+
+아침 O O
+식사 O O
+로 O O
+부리또 FOOD-B FOOD-B
+한 QTY-B QTY-B
+개 UNIT-B UNIT-B
+와 O O
+사과주스 FOOD-B FOOD-B
+한 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+을 O O
+먹었어 O O
+
+저녁 O O
+시간 O O
+에 O O
+치킨너겟 FOOD-B FOOD-B
+세 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+과 O O
+스프 FOOD-B FOOD-B
+한 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+을 O O
+먹었다 O O
+
+점심 O O
+때 O O
+제육볶음 FOOD-B FOOD-B
+과 O O
+미역국 FOOD-B FOOD-B
+을 O O
+함께 O O
+즐겼어 O O
+
+나는 O O
+오늘 O O
+점심 O O
+에 O O
+감자 FOOD-B FOOD-B
+튀김 FOOD-I FOOD-I
+과 O O
+밥 FOOD-B FOOD-B
+한 QTY-B QTY-B
+공기 UNIT-B UNIT-B
+를 O O
+식사했어 O O
+
+아침 O O
+에 O O
+바게트 FOOD-B FOOD-B
+두 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+과 O O
+우유 FOOD-B FOOD-B
+한 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+을 O O
+마셨다 O O
+
+점심 O O
+시간 O O
+에 O O
+쌀국수 FOOD-B FOOD-B
+한 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+과 O O
+튀김 FOOD-B FOOD-B
+세 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+을 O O
+먹었다 O O
+
+저녁 O O
+으로 O O
+스파게티 FOOD-B FOOD-B
+한 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+와 O O
+샐러드 FOOD-B FOOD-B
+한 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+을 O O
+먹었어 O O
+
+나는 O O
+오늘 O O
+아침 O O
+에 O O
+달걀 FOOD-B FOOD-B
+후라이 FOOD-I FOOD-I
+와 O O
+볶음밥 FOOD-B FOOD-B
+한 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+을 O O
+먹었다 O O
+
+점심 O O
+때 O O
+구운연어 FOOD-B FOOD-B
+한 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+과 O O
+채소 FOOD-B FOOD-B
+한 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+를 O O
+먹었다 O O
+
+저녁 O O
+에 O O
+볶음밥 FOOD-B FOOD-B
+한 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+과 O O
+오징어 FOOD-B FOOD-B
+튀김 FOOD-I FOOD-I
+두 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+을 O O
+즐겼다 O O
+
+아침 O O
+에 O O
+김치찌개 FOOD-B FOOD-B
+한 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+과 O O
+밥 FOOD-B FOOD-B
+한 QTY-B QTY-B
+공기 UNIT-B UNIT-B
+를 O O
+먹었어 O O
+
+나는 O O
+오늘 O O
+저녁 O O
+에 O O
+냉면 FOOD-B FOOD-B
+한 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+과 O O
+교자만두 FOOD-B FOOD-B
+다섯 QTY-B QTY-B
+개 UNIT-B UNIT-B
+를 O O
+먹었어 O O
+
+점심 O O
+에 O O
+우동 FOOD-B FOOD-B
+300 QTY-B QTY-B
+g UNIT-B UNIT-B
+
+나는 O O
+저녁 O O
+에 O O
+불고기 FOOD-B FOOD-B
+한 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+와 O O
+상추 FOOD-B FOOD-B
+한 QTY-B QTY-B
+잎 UNIT-B UNIT-B
+을 O O
+먹었어 O O
+
+오늘 O O
+아침 O O
+에 O O
+샌드위치 FOOD-B FOOD-B
+세 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+와 O O
+주스 FOOD-B FOOD-B
+한 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+을 O O
+마셨다 O O
+
+저녁 O O
+으로 O O
+소고기국밥 FOOD-B FOOD-B
+한 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+과 O O
+김치 FOOD-B FOOD-B
+한 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+를 O O
+먹었어 O O
+
+나는 O O
+점심 O O
+에 O O
+콩국수 FOOD-B FOOD-B
+두 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+과 O O
+계란 FOOD-B FOOD-B
+하나 QTY-B QTY-B
+를 O O
+먹었어 O O
+
+아침 O O
+에 O O
+스무디 FOOD-B FOOD-B
+한 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+과 O O
+토스트 FOOD-B FOOD-B
+두 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+을 O O
+먹었어 O O
+
+점심 O O
+으로 O O
+잡채 FOOD-B FOOD-B
+한 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+와 O O
+계란찜 FOOD-B FOOD-B
+두 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+을 O O
+먹었어 O O
+
+나는 O O
+저녁 O O
+에 O O
+치킨 FOOD-B FOOD-B
+한 QTY-B QTY-B
+마리 UNIT-B UNIT-B
+와 O O
+피자 FOOD-B FOOD-B
+한 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+을 O O
+먹었어 O O
+
+비타민C FOOD-B FOOD-B
+300 FOOD-I FOOD-I
+한 QTY-B QTY-B
+병. O UNIT-B
+
+비타민 FOOD-B FOOD-B
+C FOOD-I FOOD-I
+두 QTY-B QTY-B
+병. UNIT-B UNIT-B
+
+2% FOOD-B FOOD-B
+1 QTY-B QTY-B
+병 UNIT-B UNIT-B
+마셨다. O O
+
+2 FOOD-B FOOD-B
+% FOOD-I FOOD-I
+한 QTY-B QTY-B
+병. UNIT-B UNIT-B
+
+2프로 FOOD-B FOOD-B
+1 QTY-B QTY-B
+병 UNIT-B UNIT-B
+마셨다. O O
+
+2 FOOD-B FOOD-B
+프로 FOOD-I FOOD-I
+한 QTY-B QTY-B
+병. UNIT-B UNIT-B
+
+이상한나라의사탕솜 FOOD-B FOOD-B
+1.2 QTY-B QTY-B
+개 UNIT-B UNIT-B
+먹었다. O O
+
+이상한 FOOD-B FOOD-B
+나라의 FOOD-I FOOD-I
+사탕솜 FOOD-I FOOD-I
+세 FOOD-I QTY-B
+개 UNIT-B UNIT-B
+먹었다. O O
+
+뉴욕치즈케이크 FOOD-B FOOD-B
+싱글 FOOD-I FOOD-I
+1 QTY-B QTY-B
+판 UNIT-B UNIT-B
+먹었다. O O
+
+뉴욕 FOOD-B FOOD-B
+치즈케이크 FOOD-I FOOD-I
+1.5 FOOD-I QTY-B
+판 UNIT-B UNIT-B
+먹었다. O O
+
+호두 FOOD-B FOOD-B
+초콜릿 FOOD-I FOOD-I
+1 QTY-B QTY-B
+통 UNIT-B UNIT-B
+먹었다. O O
+
+호두초콜릿 FOOD-B FOOD-B
+싱글 FOOD-I FOOD-I
+1 QTY-B QTY-B
+인분 UNIT-B UNIT-B
+먹었다. O O
+
+사랑에 FOOD-B FOOD-B
+빠진 FOOD-I FOOD-I
+바닐라 FOOD-I FOOD-I
+세 FOOD-I QTY-B
+개 UNIT-B UNIT-B
+먹었다. O O
+
+사랑에빠진바닐라 FOOD-B FOOD-B
+1.5 QTY-B QTY-B
+통 UNIT-B UNIT-B
+먹었다. O O
+
+바나나나무숲 FOOD-B FOOD-B
+1 QTY-B QTY-B
+개 UNIT-B UNIT-B
+먹었다. O O
+
+스타벅스 FOOD-B FOOD-B
+아메리카노 FOOD-I FOOD-I
+벤티 FOOD-I FOOD-I
+1 QTY-B QTY-B
+잔 UNIT-B UNIT-B
+마셨다. O O
+
+스타벅스 FOOD-B FOOD-B
+모카 FOOD-I FOOD-I
+톨 FOOD-I FOOD-I
+1 QTY-B QTY-B
+잔 UNIT-B UNIT-B
+마셨다. O O
+
+스타벅스 FOOD-B FOOD-B
+카푸치노 FOOD-I FOOD-I
+그란데 FOOD-I FOOD-I
+1 QTY-B QTY-B
+잔 UNIT-B UNIT-B
+마셨다. O O
+
+스타벅스 FOOD-B FOOD-B
+아이리스 FOOD-I FOOD-I
+카페라떼 FOOD-I FOOD-I
+1 QTY-B QTY-B
+잔 UNIT-B UNIT-B
+마셨다. O O
+
+BBQ FOOD-B FOOD-B
+매운치킨 FOOD-I FOOD-I
+1 QTY-B QTY-B
+마리 UNIT-B UNIT-B
+먹었다. O O
+
+BBQ FOOD-B FOOD-B
+후라이드 FOOD-I FOOD-I
+1 QTY-B QTY-B
+마리 UNIT-B UNIT-B
+먹었다. O O
+
+BBQ FOOD-B FOOD-B
+갈릭치킨 FOOD-I FOOD-I
+1 QTY-B QTY-B
+마리 UNIT-B UNIT-B
+먹었다. O O
+
+교촌치킨 FOOD-B FOOD-B
+허니순살 FOOD-I FOOD-I
+1 QTY-B QTY-B
+마리 UNIT-B UNIT-B
+먹었다. O O
+
+버거킹 FOOD-B FOOD-B
+와퍼 FOOD-I FOOD-I
+1 QTY-B QTY-B
+개 UNIT-B UNIT-B
+먹었다. O O
+
+이디야 FOOD-B FOOD-B
+모카 FOOD-I FOOD-I
+1 QTY-B QTY-B
+잔 UNIT-B UNIT-B
+마셨다. O O
+
+피자헛 FOOD-B FOOD-B
+불고기피자 FOOD-I FOOD-I
+1 QTY-B QTY-B
+판 UNIT-B UNIT-B
+먹었다. O O
+
+서브웨이 FOOD-B FOOD-B
+터키샌드위치 FOOD-I FOOD-I
+1 QTY-B QTY-B
+개 UNIT-B UNIT-B
+먹었다. O O
+
+배스킨라빈스 FOOD-B FOOD-B
+초코칩 FOOD-I FOOD-I
+1 QTY-B QTY-B
+통 UNIT-B UNIT-B
+먹었다. O O
+
+노브랜드 FOOD-B FOOD-B
+냉동만두 FOOD-I FOOD-I
+2 QTY-B QTY-B
+봉지 UNIT-B UNIT-B
+사왔다. O O
+
+CJ햄 FOOD-B FOOD-B
+2 QTY-B QTY-B
+팩 UNIT-B UNIT-B
+먹었다. O O
+
+바나나 FOOD-B FOOD-B
+빙수 FOOD-I FOOD-I
+2 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+주문했어요 O O
+
+블루베리 FOOD-B FOOD-B
+요거트 FOOD-I FOOD-I
+0.5 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+먹었어요 O O
+
+복숭아 FOOD-B FOOD-B
+스무디 FOOD-I FOOD-I
+1 QTY-B QTY-B
+잔 UNIT-B UNIT-B
+마셨어요 O O
+
+고구마피자 FOOD-B FOOD-B
+소 FOOD-I FOOD-I
+1 QTY-B QTY-B
+판 UNIT-B UNIT-B
+주문했어요 O O
+
+올리브피자 FOOD-B FOOD-B
+대 FOOD-I FOOD-I
+2 QTY-B QTY-B
+판 UNIT-B UNIT-B
+먹었어요 O O
+
+매운닭피자 FOOD-B FOOD-B
+중 FOOD-I FOOD-I
+1 QTY-B QTY-B
+판 UNIT-B UNIT-B
+주문했어요 O O
+레몬 FOOD-B FOOD-B
+에이드 FOOD-I FOOD-I
+1 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+주문했어요 O O
+
+키위 FOOD-B FOOD-B
+젤리 FOOD-I FOOD-I
+0.75 QTY-B QTY-B
+통 UNIT-B UNIT-B
+먹었어요 O O
+
+체리 FOOD-B FOOD-B
+타르트 FOOD-I FOOD-I
+3 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+마셨어요 O O
+
+피넛버터 FOOD-B FOOD-B
+샌드위치 FOOD-I FOOD-I
+2 QTY-B QTY-B
+개 UNIT-B UNIT-B
+주문했어요 O O
+
+당근 FOOD-B FOOD-B
+케이크 FOOD-I FOOD-I
+1.5 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+먹었어요 O O
+
+토마토 FOOD-B FOOD-B
+스프 FOOD-I FOOD-I
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+마셨어요 O O
+
+바닐라 FOOD-B FOOD-B
+푸딩 FOOD-I FOOD-I
+1 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+주문했어요 O O
+
+오렌지 FOOD-B FOOD-B
+주스 FOOD-I FOOD-I
+2 QTY-B QTY-B
+잔 UNIT-B UNIT-B
+먹었어요 O O
+
+감자 FOOD-B FOOD-B
+튀김 FOOD-I FOOD-I
+1.5 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+주문했어요 O O
+
+자몽 FOOD-B FOOD-I
+샐러드 FOOD-I FOOD-I
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+먹었어요 O O
+
+망고 FOOD-B FOOD-B
+타르트 FOOD-I FOOD-I
+2 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+마셨어요 O O
+
+복숭아 FOOD-B FOOD-B
+스무디 FOOD-I FOOD-I
+1 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+주문했어요 O O
+
+파인애플 FOOD-B FOOD-B
+피자 FOOD-I FOOD-I
+1 QTY-B QTY-B
+판 UNIT-B UNIT-B
+먹었어요 O O
+
+호두 FOOD-B FOOD-B
+브라우니 FOOD-I FOOD-I
+3 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+마셨어요 O O
+
+레드벨벳 FOOD-B FOOD-B
+케이크 FOOD-I FOOD-I
+아홉 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+주문했어요 O O
+
+치킨 FOOD-B FOOD-B
+너겟 FOOD-I FOOD-I
+여덟 QTY-B QTY-B
+개 UNIT-B UNIT-B
+먹었어요 O O
+
+햄버거 FOOD-B FOOD-B
+치즈 FOOD-I FOOD-I
+여덜 QTY-B QTY-B
+개 UNIT-B UNIT-B
+주문했어요 O O
+
+스파게티 FOOD-B FOOD-B
+볼로네제 FOOD-I FOOD-I
+네 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+먹었어요 O O
+
+파스타 FOOD-B FOOD-B
+알프레도 FOOD-I FOOD-I
+1.5 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+마셨어요 O O
+
+닭가슴살 FOOD-B FOOD-B
+구이 FOOD-I FOOD-I
+1 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+주문했어요 O O
+
+소세지 FOOD-B FOOD-B
+피자 FOOD-I FOOD-I
+2 QTY-B QTY-B
+판 UNIT-B UNIT-B
+먹었어요 O O
+
+샐러드 FOOD-B FOOD-B
+드레싱 FOOD-I FOOD-I
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+마셨어요 O O
+
+퀘사디아 FOOD-B FOOD-B
+치즈 FOOD-I FOOD-I
+1 QTY-B QTY-B
+개 UNIT-B UNIT-B
+주문했어요 O O
+
+타코 FOOD-B FOOD-B
+고기 FOOD-I FOOD-I
+3 QTY-B QTY-B
+개 UNIT-B UNIT-B
+먹었어요 O O
+
+크림소스 FOOD-B FOOD-B
+파스타 FOOD-I FOOD-I
+1 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+마셨어요 O O
+
+붕어빵 FOOD-B FOOD-B
+팥 FOOD-I FOOD-I
+4 QTY-B QTY-B
+개 UNIT-B UNIT-B
+주문했어요 O O
+
+초코케이크 FOOD-B FOOD-B
+디저트 FOOD-I FOOD-I
+열여덟 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+먹었어요 O O
+
+사과 FOOD-B FOOD-B
+파이 FOOD-I FOOD-I
+여덜 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+마셨어요 O O
+
+바베큐 FOOD-B FOOD-B
+치킨 FOOD-I FOOD-I
+1 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+주문했어요 O O
+
+콩빙수 FOOD-B FOOD-B
+팥 FOOD-I FOOD-I
+일곱 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+먹었어요 O O
+
+오징어튀김 FOOD-B FOOD-B
+안주 FOOD-I FOOD-I
+여섯 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+주문했어요 O O
+
+소고기 FOOD-B FOOD-B
+스테이크 FOOD-I FOOD-I
+1 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+먹었어요 O O
+
+칼국수 FOOD-B FOOD-B
+해물 FOOD-I FOOD-I
+아홉 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+마셨어요 O O
+
+우동 FOOD-B FOOD-B
+돈부리 FOOD-I FOOD-I
+1 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+주문했어요 O O
+
+김밥 FOOD-B FOOD-B
+참치 FOOD-I FOOD-I
+
+햇토마토 FOOD-B FOOD-B
+샐러드 FOOD-I FOOD-I
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+주문했어요 O O
+
+포도 FOOD-B FOOD-B
+주스 FOOD-I FOOD-I
+1.5 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+먹었어요 O O
+
+호박 FOOD-B FOOD-B
+죽 FOOD-I FOOD-I
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+마셨어요 O O
+
+고구마 FOOD-B FOOD-B
+튀김 FOOD-I FOOD-I
+2 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+주문했어요 O O
+
+계란 FOOD-B FOOD-B
+프라이 FOOD-I FOOD-I
+3 QTY-B QTY-B
+개 UNIT-B UNIT-B
+먹었어요 O O
+
+연어 FOOD-B FOOD-B
+스시 FOOD-I FOOD-I
+5 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+마셨어요 O O
+
+레몬에이드 FOOD-B FOOD-B
+음료 FOOD-I FOOD-I
+1 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+주문했어요 O O
+
+된장찌개 FOOD-B FOOD-B
+찌개 FOOD-I FOOD-I
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+먹었어요 O O
+
+어묵 FOOD-B FOOD-B
+탕 FOOD-I FOOD-I
+1.5 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+마셨어요 O O
+
+만두 FOOD-B FOOD-B
+찌개 FOOD-I FOOD-I
+2 QTY-B QTY-B
+개 UNIT-B UNIT-B
+주문했어요 O O
+
+치킨너겟 FOOD-B FOOD-B
+안주 FOOD-I FOOD-I
+6 QTY-B QTY-B
+개 UNIT-B UNIT-B
+먹었어요 O O
+
+불고기 FOOD-B FOOD-B
+덮밥 FOOD-I FOOD-I
+1 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+주문했어요 O O
+
+춘권 FOOD-B FOOD-B
+튀김 FOOD-I FOOD-I
+4 QTY-B QTY-B
+개 UNIT-B UNIT-B
+먹었어요 O O
+
+소고기 FOOD-B FOOD-B
+국밥 FOOD-I FOOD-I
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+마셨어요 O O
+
+수박 FOOD-B FOOD-B
+슬라이스 FOOD-I FOOD-I
+2 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+주문했어요 O O
+
+카레 FOOD-B FOOD-B
+밥 FOOD-I FOOD-I
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+먹었어요 O O
+
+바나나 FOOD-B FOOD-B
+스무디 FOOD-I FOOD-I
+1 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+마셨어요 O O
+
+햄 FOOD-B FOOD-B
+샌드위치 FOOD-I FOOD-I
+2 QTY-B QTY-B
+개 UNIT-B UNIT-B
+주문했어요 O O
+
+김치 FOOD-B FOOD-B
+전 FOOD-I FOOD-I
+1 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+먹었어요 O O
+
+아보카도 FOOD-B FOOD-B
+토스트 FOOD-I FOOD-I
+1 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+주문했어요 O O
+
+감자 FOOD-B FOOD-B
+샐러드 FOOD-I FOOD-I
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+먹었어요 O O
+
+초밥 FOOD-B FOOD-B
+연어 FOOD-I FOOD-I
+5 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+마셨어요 O O
+
+버섯 FOOD-B FOOD-B
+볶음 FOOD-I FOOD-I
+1 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+주문했어요 O O
+
+미트볼 FOOD-B FOOD-B
+파스타 FOOD-I FOOD-I
+2 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+먹었어요 O O
+
+닭가슴살 FOOD-B FOOD-B
+샐러드 FOOD-I FOOD-I
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+마셨어요 O O
+
+토스트 FOOD-B FOOD-B
+잼 FOOD-I FOOD-I
+2 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+주문했어요 O O
+
+스콘 FOOD-B FOOD-B
+크림 FOOD-I FOOD-I
+1 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+먹었어요 O O
+
+단호박 FOOD-B FOOD-B
+죽 FOOD-I FOOD-I
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+마셨어요 O O
+
+바질 FOOD-B FOOD-B
+페스토 FOOD-I FOOD-I
+1 QTY-B QTY-B
+통 UNIT-B UNIT-B
+주문했어요 O O
+
+물회 FOOD-B FOOD-B
+회 FOOD-I FOOD-I
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+먹었어요 O O
+
+치즈볼 FOOD-B FOOD-B
+안주 FOOD-I FOOD-I
+3 QTY-B QTY-B
+개 UNIT-B UNIT-B
+주문했어요 O O
+
+와플 FOOD-B FOOD-B
+딸기 FOOD-I FOOD-I
+1 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+먹었어요 O O
+
+돼지고기 FOOD-B FOOD-B
+김치찌개 FOOD-I FOOD-I
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+마셨어요 O O
+
+타르트 FOOD-B FOOD-B
+딸기 FOOD-I FOOD-I
+1 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+주문했어요 O O
+
+사탕수수 FOOD-B FOOD-B
+주스 FOOD-I FOOD-I
+1 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+
+오늘 O O
+나는 O O
+친구 O O
+와 O O
+비빔밥 FOOD-B FOOD-B
+한 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+과 O O
+커피 FOOD-B FOOD-B
+세 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+를 O O
+마셨어 O O
+
+내 O O
+형 O O
+과 O O
+팥빙수 FOOD-B FOOD-B
+3 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+를 O O
+나누어 O O
+먹었어 O O
+
+나는 O O
+오늘 O O
+국밥 FOOD-B FOOD-B
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+과 O O
+김치 FOOD-B FOOD-B
+몇 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+을 O O
+먹었어 O O
+
+점심 O O
+으로 O O
+밥 FOOD-B FOOD-B
+250 QTY-B QTY-B
+그램 UNIT-B UNIT-B
+과 O O
+된장국 FOOD-B FOOD-B
+하나 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+
+나는 O O
+점심 O O
+시간에 O O
+김밥 FOOD-B FOOD-B
+300 QTY-B QTY-B
+g UNIT-B UNIT-B
+와 O O
+미소된장국 FOOD-B FOOD-B
+하나 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+을 O O
+먹었다 O O
+
+오늘 O O
+저녁 O O
+시간에 O O
+비빔밥 FOOD-B FOOD-B
+와 O O
+된장국 FOOD-B FOOD-B
+를 O O
+같이 O O
+먹었어 O O
+
+오늘 O O
+아침 O O
+시간에 O O
+갈비탕 FOOD-B FOOD-B
+200 QTY-B QTY-B
+g UNIT-B UNIT-B
+와 O O
+두유 FOOD-B FOOD-B
+한 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+을 O O
+마셨어 O O
+
+저녁 O O
+시간에 O O
+삼겹살 FOOD-B FOOD-B
+250 QTY-B QTY-B
+g UNIT-B UNIT-B
+와 O O
+상추 FOOD-B FOOD-B
+3 QTY-B QTY-B
+장 UNIT-B UNIT-B
+
+오늘 O O
+아침 O O
+시간에 O O
+치즈토스트 FOOD-B FOOD-B
+한 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+과 O O
+오렌지주스 FOOD-B FOOD-B
+세 QTY-B QTY-B
+잔 UNIT-B UNIT-B
+을 O O
+먹었어 O O
+
+나는 O O
+저녁 O O
+시간에 O O
+삼겹살 FOOD-B FOOD-B
+250 QTY-B QTY-B
+g UNIT-B UNIT-B
+와 O O
+상추 FOOD-B FOOD-B
+4 QTY-B QTY-B
+장 UNIT-B UNIT-B
+
+나는 O O
+점심 O O
+시간에 O O
+불고기 FOOD-B FOOD-B
+스파게티 FOOD-I FOOD-I
+를 O O
+150 QTY-B QTY-B
+g UNIT-B UNIT-B
+과 O O
+프로틴쉐이크 FOOD-B FOOD-B
+한 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+을 O O
+마셨어 O O
+
+오늘 O O
+나는 O O
+친구 O O
+와 O O
+삼계탕 FOOD-B FOOD-B
+한 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+과 O O
+아메리카노 FOOD-B FOOD-B
+세 QTY-B QTY-B
+잔 UNIT-B UNIT-B
+를 O O
+마셨다 O O
+
+내 O O
+여동생 O O
+과 O O
+자몽빙수 FOOD-B FOOD-B
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+를 O O
+나누어 O O
+먹었다 O O
+
+나는 O O
+오늘 O O
+김치전 FOOD-B FOOD-B
+2 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+과 O O
+막걸리 FOOD-B FOOD-B
+한 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+을 O O
+마셨다 O O
+
+점심 O O
+으로 O O
+해물파전 FOOD-B FOOD-B
+300 QTY-B QTY-B
+그램 UNIT-B UNIT-B
+과 O O
+된장찌개 FOOD-B FOOD-B
+하나 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+
+오늘 O O
+저녁 O O
+시간에 O O
+오징어볶음 FOOD-B FOOD-B
+와 O O
+흑미밥 FOOD-B FOOD-B
+를 O O
+같이 O O
+먹었다 O O
+
+오늘 O O
+아침 O O
+시간에 O O
+부대찌개 FOOD-B FOOD-B
+150 QTY-B QTY-B
+g UNIT-B UNIT-B
+와 O O
+요거트 FOOD-B FOOD-B
+하나 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+을 O O
+마셨다 O O
+
+저녁 O O
+시간에 O O
+소고기스튜 FOOD-B FOOD-B
+200 QTY-B QTY-B
+g UNIT-B UNIT-B
+와 O O
+샐러드 FOOD-B FOOD-B
+반 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+
+오늘 O O
+아침 O O
+시간에 O O
+팬케이크 FOOD-B FOOD-B
+한 QTY-B QTY-B
+개 UNIT-B UNIT-B
+와 O O
+딸기주스 FOOD-B FOOD-B
+두 QTY-B QTY-B
+잔 UNIT-B UNIT-B
+을 O O
+마셨다 O O
+
+나는 O O
+저녁 O O
+시간에 O O
+소고기불고기 FOOD-B FOOD-B
+250 QTY-B QTY-B
+g UNIT-B UNIT-B
+와 O O
+쌈채소 FOOD-B FOOD-B
+5 QTY-B QTY-B
+장 UNIT-B UNIT-B
+
+오늘 O O
+점심 O O
+시간에 O O
+치킨너겟 FOOD-B FOOD-B
+200 QTY-B QTY-B
+g UNIT-B UNIT-B
+와 O O
+콜라 FOOD-B FOOD-B
+한 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+
+나는 O O
+저녁 O O
+시간에 O O
+해물짬뽕 FOOD-B FOOD-B
+300 QTY-B QTY-B
+g UNIT-B UNIT-B
+와 O O
+김치 FOOD-B FOOD-B
+두 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+을 O O
+먹었다 O O
+
+나는 O O
+오늘 O O
+순대 FOOD-B FOOD-B
+와 O O
+떡볶이 FOOD-B FOOD-B
+를 O O
+각각 QTY-B QTY-B
+2 QTY-I QTY-I
+그릇 UNIT-B UNIT-B
+씩 O O
+먹었어 O O
+
+나는 O O
+오늘 O O
+빵 FOOD-B FOOD-B
+과 O O
+리조또 FOOD-B FOOD-B
+를 O O
+각각 QTY-B QTY-B
+2 QTY-I QTY-I
+조각 UNIT-B UNIT-B
+씩 O O
+즐겼어 O O
+
+나는 O O
+오늘 O O
+프라이드치킨 FOOD-B FOOD-B
+와 O O
+햄버거 FOOD-B FOOD-B
+를 O O
+각각 QTY-B QTY-B
+4 QTY-I QTY-I
+개 UNIT-B UNIT-B
+씩 O O
+먹었어 O O
+
+나는 O O
+오늘 O O
+스프 FOOD-B FOOD-B
+와 O O
+샌드위치 FOOD-B FOOD-B
+를 O O
+각각 QTY-B QTY-B
+2 QTY-I QTY-I
+그릇 UNIT-B UNIT-B
+씩 O O
+먹었어 O O
+
+나는 O O
+오늘 O O
+요거트 FOOD-B FOOD-B
+와 O O
+스무디 FOOD-B FOOD-B
+를 O O
+각각 QTY-B QTY-B
+3 QTY-I QTY-I
+컵 UNIT-B UNIT-B
+씩 O O
+마셨어 O O
+
+나는 O O
+오늘 O O
+김밥 FOOD-B FOOD-B
+와 O O
+튀김 FOOD-B FOOD-B
+을 O O
+각각 QTY-B QTY-B
+3 QTY-I QTY-I
+개 UNIT-B UNIT-B
+씩 O O
+먹었어 O O
+
+나는 O O
+오늘 O O
+파스타 FOOD-B FOOD-B
+와 O O
+샐러드 FOOD-B FOOD-B
+를 O O
+각각 QTY-B QTY-B
+2 QTY-I QTY-I
+그릇 UNIT-B UNIT-B
+씩 O O
+즐겼어 O O
+
+나는 O O
+오늘 O O
+초밥 FOOD-B FOOD-B
+와 O O
+미소된장국 FOOD-B FOOD-B
+을 O O
+각각 QTY-B QTY-B
+1 QTY-I QTY-I
+접시 UNIT-B UNIT-B
+씩 O O
+먹었어 O O
+
+나는 O O
+오늘 O O
+치킨너겟 FOOD-B FOOD-B
+와 O O
+콜라 FOOD-B FOOD-B
+를 O O
+각각 QTY-B QTY-B
+5 QTY-I QTY-I
+개 UNIT-B UNIT-B
+씩 O O
+마셨어 O O
+
+나는 O O
+오늘 O O
+스파게티 FOOD-B FOOD-B
+와 O O
+브레드스틱 FOOD-B FOOD-B
+을 O O
+각각 QTY-B QTY-B
+2 QTY-I QTY-I
+개 UNIT-B UNIT-B
+씩 O O
+먹었어 O O
+
+오늘 O O
+점심 O O
+시간에 O O
+불고기 FOOD-B FOOD-B
+한 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+와 O O
+김치 FOOD-B FOOD-B
+두 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+을 O O
+먹었어 O O
+
+나는 O O
+아침 O O
+시간에 O O
+팬케이크 FOOD-B FOOD-B
+두 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+와 O O
+우유 FOOD-B FOOD-B
+한 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+을 O O
+마셨어 O O
+
+오늘 O O
+저녁 O O
+시간에 O O
+스파게티 FOOD-B FOOD-B
+한 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+와 O O
+샐러드 FOOD-B FOOD-B
+한 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+을 O O
+먹었어 O O
+
+나는 O O
+점심 O O
+시간에 O O
+샌드위치 FOOD-B FOOD-B
+세 QTY-B QTY-B
+개 UNIT-B UNIT-B
+와 O O
+주스 FOOD-B FOOD-B
+두 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+를 O O
+마셨어 O O
+
+오늘 O O
+아침 O O
+시간에 O O
+계란후라이 FOOD-B FOOD-B
+두 QTY-B QTY-B
+개 UNIT-B UNIT-B
+와 O O
+토스트 FOOD-B FOOD-B
+한 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+을 O O
+먹었어 O O
+
+나는 O O
+저녁 O O
+시간에 O O
+스테이크 FOOD-B FOOD-B
+200 QTY-B QTY-B
+g UNIT-B UNIT-B
+와 O O
+감자튀김 FOOD-B FOOD-B
+세 QTY-B QTY-B
+개 UNIT-B UNIT-B
+를 O O
+먹었어 O O
+
+오늘 O O
+점심 O O
+시간에 O O
+볶음밥 FOOD-B FOOD-B
+한 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+과 O O
+장어구이 FOOD-B FOOD-B
+한 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+을 O O
+먹었어 O O
+
+나는 O O
+아침 O O
+시간에 O O
+오믈렛 FOOD-B FOOD-B
+한 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+와 O O
+주스 FOOD-B FOOD-B
+네 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+을 O O
+마셨어 O O
+
+오늘 O O
+저녁 O O
+시간에 O O
+된장찌개 FOOD-B FOOD-B
+한 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+과 O O
+밥 FOOD-B FOOD-B
+한 QTY-B QTY-B
+공기 UNIT-B UNIT-B
+를 O O
+먹었어 O O
+
+나는 O O
+점심 O O
+시간에 O O
+피자 FOOD-B FOOD-B
+한 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+과 O O
+콜라 FOOD-B FOOD-B
+한 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+을 O O
+마셨어 O O
+
+오늘 O O
+아침 O O
+시간에 O O
+치킨 FOOD-B FOOD-B
+한 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+과 O O
+샐러드 FOOD-B FOOD-B
+한 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+을 O O
+먹었어 O O
+
+나는 O O
+저녁 O O
+시간에 O O
+초밥 FOOD-B FOOD-B
+세 QTY-B QTY-B
+개 UNIT-B UNIT-B
+와 O O
+미소된장국 FOOD-B FOOD-B
+한 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+을 O O
+먹었어 O O
+
+오늘 O O
+점심 O O
+시간에 O O
+라면 FOOD-B FOOD-B
+한 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+과 O O
+김밥 FOOD-B FOOD-B
+두 QTY-B QTY-B
+개 UNIT-B UNIT-B
+를 O O
+먹었어 O O
+
+나는 O O
+아침 O O
+시간에 O O
+스무디 FOOD-B FOOD-B
+한 QTY-B QTY-B
+컵 UNIT-B UNIT-B
+과 O O
+토스트 FOOD-B FOOD-B
+두 QTY-B QTY-B
+조각 UNIT-B UNIT-B
+을 O O
+먹었어 O O
+
+오늘 O O
+저녁 O O
+시간에 O O
+볶음면 FOOD-B FOOD-B
+한 QTY-B QTY-B
+접시 UNIT-B UNIT-B
+와 O O
+해물 FOOD-B O
+튀김 FOOD-I FOOD-B
+세 QTY-B QTY-B
+개 UNIT-B UNIT-B
+를 O O
+먹었어 O O
+
+나는 O O
+점심 O O
+시간에 O O
+햄버거 FOOD-B FOOD-B
+한 QTY-B QTY-B
+개 UNIT-B UNIT-B
+와 O O
+감자튀김 FOOD-B FOOD-B
+세 QTY-B QTY-B
+개 UNIT-B UNIT-B
+를 O O
+먹었어 O O
+
+오늘 O O
+아침 O O
+시간에 O O
+브리또 FOOD-B FOOD-B
+한 QTY-B QTY-B
+개 UNIT-B UNIT-B
+와 O O
+사과 FOOD-B FOOD-B
+한 QTY-B QTY-B
+개 UNIT-B UNIT-B
+를 O O
+먹었어 O O
+
+나는 O O
+저녁 O O
+시간에 O O
+닭갈비 FOOD-B FOOD-B
+200 QTY-B QTY-B
+g UNIT-B UNIT-B
+와 O O
+
+오늘 O O
+나는 O O
+카레라이스 FOOD-B FOOD-B
+1 QTY-B QTY-B
+그릇 UNIT-B UNIT-B
+과 O O
+사과주스 FOOD-B FOOD-B
+세 QTY-B QTY-B
+잔 UNIT-B UNIT-B
+을 O O
+마셨다 O O
+

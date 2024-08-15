@@ -1,0 +1,72 @@
+난 저녁에 [우삼겹:FOOD-B] [300:QTY-B] [g:UNIT-B] 과 [김치:FOOD-B] [두:QTY-B] [조각:UNIT-B] [닭가슴살:FOOD-B] [한:QTY-B] [덩어리:UNIT-B] , [밥:FOOD-B] [한:QTY-B] [그릇:UNIT-B] 을 먹었어. [오뎅:FOOD-B] [한:QTY-B] [접시:UNIT-B] 먹었네
+난 아침에 [바나나:FOOD-B] [2:QTY-B] [개:UNIT-B] 와 [미숫가루:FOOD-B] [한:QTY-B] [병:UNIT-B] 과 [하이뮨:FOOD-B] [프로틴쉐이크:FOOD-I] [1:QTY-B] [잔:UNIT-B] 을 마실거야
+나는 7 월 18 일 점심에 [어니언맛:FOOD-B] [닭가슴살:FOOD-I] [100:QTY-B] [g:UNIT-B] 과 [밥:FOOD-B] [한:QTY-B] [공기:UNIT-B] 와 [계란찜:FOOD-B] [2:QTY-B] [숟가락:UNIT-B] 을 먹었다!
+[수박:FOOD-B] [한:QTY-B] [통:UNIT-B] 먹음
+7 월 21 일에 나는 [오리고기:FOOD-B] [100:QTY-B] [g:UNIT-B] 과 [닭가슴살:FOOD-B] [한:QTY-B] [덩어리:UNIT-B] , [구론산:FOOD-B] [1:QTY-B] [병:UNIT-B] 을 마셨어.
+친구는 [아이스크림라떼:FOOD-B] [1:QTY-B] [잔:UNIT-B] 을 마셨어.
+나는 [족발:FOOD-B] [300:QTY-B] [g:UNIT-B] 과 [알:FOOD-B] [리오올리오:FOOD-I] [1:QTY-B] [인분:UNIT-B] 을 먹었어.
+점심엔 [닭갈비:FOOD-B] [돝솥비빔밥:FOOD-I] [1:QTY-B] [그릇:UNIT-B] 이랑 [곤약젤리:FOOD-B] [100:QTY-B] [그람:UNIT-B] 먹음
+나는 [한:QTY-B] [잔:UNIT-B] 은 [아이스:FOOD-B] [아메리카노:FOOD-I] 마시고 디저트는 [마카롱:FOOD-B] [3:QTY-B] [개:UNIT-B] 를 먹음
+[BBQ:FOOD-B] [황금올리브:FOOD-I] [치킨:FOOD-I] 먹었고 [콜라:FOOD-B] [제로로:QTY-B] 마셨어
+목요일에는 친구집에서 [소주:FOOD-B] [한:QTY-B] [병:UNIT-B] 때리고 [크리스피:FOOD-B] [삼겹살:FOOD-I] 배 터지게 먹을거야
+[비타:FOOD-B] [500:FOOD-I] [1:QTY-B] [병:UNIT-B] 마셨어
+[비타500:FOOD-B] [1:QTY-B] [명:UNIT-B] 마심
+[이프:FOOD-B] [1:QTY-B] [잔:UNIT-B] 마심
+[2:FOOD-B] [%:FOOD-I] [1:QTY-B] [병:UNIT-B] 마셨어
+엄마는 [외계인:FOOD-B] [1:QTY-B] [개:UNIT-B] 먹었어
+[이프:FOOD-B] [1:QTY-B] [병:UNIT-B] 마셨어
+[사발면:FOOD-B] [1:QTY-B] [그릇:UNIT-B] 먹음
+[사발면:FOOD-B] 먹었음
+[원숭이:FOOD-B] [한:QTY-B] [마리:UNIT-B] 먹음
+[레인보우샤베트:FOOD-B] [파인트:FOOD-I] [1:QTY-B] [개:UNIT-B] 먹음
+[주스:FOOD-B] [30:QTY-B] [%:UNIT-B] 만 마셨어
+[이상한:FOOD-B] [나라:FOOD-I] [솜사탕:FOOD-I] [패밀리:FOOD-I] [1:QTY-B] [개:UNIT-B] 먹음
+[비비고:FOOD-B] [만두:FOOD-I] [1:QTY-B] [봉지:UNIT-B] 먹음
+[불닭볶음면:FOOD-B] [1:QTY-B] [인분:UNIT-B] 먹음
+[스타벅스:FOOD-B] [자바칩:FOOD-I] [프라푸치노:FOOD-I] [벤티:FOOD-I] [1:QTY-B] [잔:UNIT-B] 먹음
+[삼겹살:FOOD-B] [세:QTY-B] [근:UNIT-B] 먹음
+나는 [베스킨라빈스:FOOD-B] [초코나무숲:FOOD-I] [하프갤런:FOOD-I] [1:QTY-B] [개:UNIT-B] 먹었어
+[육식토끼:FOOD-B] [닭가슴살:FOOD-I] [어니언맛:FOOD-I] [1:QTY-B] [개:UNIT-B] 먹었음
+[하림:FOOD-B] [블랙페퍼:FOOD-I] [닭가슴살:FOOD-I] [1:QTY-B] [개:UNIT-B] 먹었음
+[빅맥:FOOD-B] [세:FOOD-I] [트:FOOD-I] [1:QTY-B] [개:UNIT-B] 먹음
+[바람과함께사라지다:FOOD-B] [쿼터:FOOD-I] [1:QTY-B] [개:UNIT-B] 먹었음
+[체리쥬빌레:FOOD-B] [파인트:FOOD-I] [1:QTY-B] [통:UNIT-B] 먹었어.
+오늘 아침으로 [잼:FOOD-B] [바른:FOOD-I] [토스트:FOOD-I] [2:QTY-B] [개:UNIT-B] 와 [우유:FOOD-B] [1:QTY-B] [컵:UNIT-B] 을 먹었어.
+[마스카포네:FOOD-B] [티라미수:FOOD-I] [1:QTY-B] [피스:UNIT-B] 먹었어
+[마라맛:FOOD-B] [닭가슴살:FOOD-I] [2:QTY-B] [덩어리:UNIT-B] 먹음
+[버거킹:FOOD-B] [새우:FOOD-I] [와퍼:FOOD-I] [1:QTY-B] [개:UNIT-B] 랑 [어니언링:FOOD-B] [1:QTY-B] [인분:UNIT-B] 먹을거야.
+나는 [초코우유:FOOD-B] [1:QTY-B] [팩:UNIT-B] 마셨고, [여러:QTY-B] [과일:FOOD-B] 함께 먹었어.
+[치킨:FOOD-B] [조금:QTY-B] 먹었어
+[과일:FOOD-B] [한:QTY-B] [조각:UNIT-B] 먹었어
+[치킨:FOOD-B] [피자:FOOD-B] [각:QTY-B] [한:QTY-I] [조각:UNIT-B] 씩 먹었어
+[치킨:FOOD-B] [피자:FOOD-B] [각각:QTY-B] [한:QTY-I] [조각:UNIT-B] 먹었어
+나는 [라면:FOOD-B] [삼분의:QTY-B] [일만큼:QTY-I] 먹었어
+[치킨:FOOD-B] [0.5:QTY-B] [마리:UNIT-B] 먹었어
+[피자:FOOD-B] [한:QTY-B] [판:UNIT-B] [시켜서:FOOD-I] 다 먹었고, [콜라:FOOD-B] [1.5:QTY-B] [리터:UNIT-B] 마셨지.
+나는 [치킨:FOOD-B] [1:QTY-B] [마리:UNIT-B] [반:QTY-I] 을 먹었어
+나는 [밥을:FOOD-B] [볶아먹고:FOOD-I] [빙수:FOOD-B] [1:QTY-B] [개:UNIT-B] 먹었어
+[과자:FOOD-B] [3.5:QTY-B] [봉지:UNIT-B] 먹음
+예린이는 [새우:FOOD-B] [포케:FOOD-I] [1:QTY-B] [접시:UNIT-B] 먹었고, [닭가슴살:FOOD-B] [한:QTY-B] [덩어리:UNIT-B] 먹었고 [초코건빵:FOOD-B] [1:QTY-B] [봉지:UNIT-B] 먹었어
+[누텔라:FOOD-B] [바른:FOOD-I] [토스트:FOOD-I] [1:QTY-B] [조각:UNIT-B] 먹었어
+나는 [밥:FOOD-B] [한:QTY-B] [공기:UNIT-B] 를 데워 먹었어
+[주스:FOOD-B] [2:QTY-B] [%:UNIT-B] 만 마셨어
+[초코나무숲:FOOD-B] [하프갤런:FOOD-I] 먹었어.
+나는 점심으로 [삽결살:FOOD-B] [1:QTY-B] [인분:UNIT-B] 과 [소주:FOOD-B] [한:QTY-B] [잔:UNIT-B] 을 먹었어
+나는 오늘 [삼겹살:FOOD-B] [1:QTY-B] [잔:UNIT-B] 을 먹었어
+나는 점심으로 [삽결살:FOOD-B] [계란찜:FOOD-B] [하나를:QTY-B] 먹었어
+나는 오늘 [사과:FOOD-B] [딸기:FOOD-B] [각각:QTY-B] [5:QTY-I] [개:UNIT-B] 씩 먹었어
+나 오늘 [삼겹살:FOOD-B] 먹고 [밥을:FOOD-B] [볶아:FOOD-I] 먹었어 근 데 [계란찜:FOOD-B] [하나:QTY-B] 시켰어
+나 오늘 [셀러드:FOOD-B] 먹었는데 [토마토:FOOD-B] [10:QTY-B] [개:UNIT-B] 랑 [양배추:FOOD-B] [3:QTY-B] [개:UNIT-B] , [오이:FOOD-B] [반:QTY-B] [개:UNIT-B] 로 구성 되어있어
+나는 오늘 [삼겹살:FOOD-B] [1:QTY-B] [인분:UNIT-B] 을 먹었고, 후식으로 [딸기:FOOD-B] [3:QTY-B] [개:UNIT-B] 를 먹었어, 그리고 [한:QTY-B] [잔:UNIT-B] 했어
+나는 오늘 [고추장:FOOD-B] 에 [밥을:FOOD-B] [비벼:FOOD-I] 먹었어
+[제육볶음:FOOD-B] [삼:QTY-B] [인분:UNIT-B] 먹음
+나는 오늘 [삼겹살:FOOD-B] [각각:QTY-B] [3:QTY-I] [개:UNIT-B] 씩 먹었어
+나는 오늘 [비빔장:FOOD-B] 에 [국수를:FOOD-B] [비벼:FOOD-I] 먹었어.
+나느 오늘 [국수:FOOD-B] [비빔장:FOOD-B] 에 [비벼:FOOD-I] 먹었어.
+나는 오늘 [삽겹살:FOOD-B] [3:QTY-B] [개:UNIT-B] 먹었어
+나는 오늘 [오징어를:FOOD-B] [튀겨:FOOD-I] 먹었어
+나는 공복에 [아메리카노:FOOD-B] [한:QTY-B] [잔:UNIT-B] 을 먹었고 운동 후에 [바나나:FOOD-B] [한:QTY-B] [개:UNIT-B] 를 먹었어 그리고 좀 이따가 [김치찜:FOOD-B] 먹을 예정이야
+나는 [딸기:FOOD-B] [포도:FOOD-B] [각:QTY-B] [1:QTY-I] [개:UNIT-B] 씩 먹었어
+나는 [사과:FOOD-B] [1:QTY-B] [개:UNIT-B] 먹음
+[콜라를:FOOD-B] [제로:FOOD-I] [1:QTY-B] [개:UNIT-B] 먹었어 학습 데이터 추가
+나는 [비빔밥:FOOD-B] [라면:FOOD-B] [두:QTY-B] [그릇:UNIT-B] 먹었어
