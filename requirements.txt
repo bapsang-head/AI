@@ -11,6 +11,8 @@ torch
 numpy
 seqeval
 sentencepiece
+beautifulsoup4
+lxml
 #konlpy
 #konlpy mecab-python3
 #mecab-ko-dic
