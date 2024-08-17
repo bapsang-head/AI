@@ -17,7 +17,7 @@ rate_limiter = RateLimiter(max_calls=10)
 @rate_limiter.limit_api_calls  # API 호출 제한 데코레이터 적용
 def process_second_GPT_API():
     try:
-        logger.info(f"Received request: {request.data}")
+        logger.info(f"Received request: {request.data.decode('utf-8')}")
 
         # API 키를 요청 헤더에서 가져오기
         gpt_api_key = request.headers.get('GPT-API-KEY')
@@ -29,7 +29,7 @@ def process_second_GPT_API():
             logger.error("Invalid input: %s", data)
             return jsonify({"error": "Invalid input"}), 400
 
-        logger.info(f"Received data: {data}")
+        logger.info(f"Received data: {json.dumps(data, ensure_ascii=False, indent=4)}")
 
         food_items = []
         for i in range(0, len(data["data"]), 2):
@@ -46,15 +46,21 @@ def process_second_GPT_API():
         for food_name in food_names:
             nutrition_info = rag_instance.search_nutrition_info(food_name)
             if nutrition_info:
-                all_nutrition_info.extend(nutrition_info)
+                # 각 항목 사이에 줄바꿈과 공백 추가
+                cleaned_nutrition_info = [info.replace('\t', ' ').replace('\n', ' ').replace('\r', '').strip() for info in nutrition_info]
+                formatted_info = "\n".join(cleaned_nutrition_info)
+                all_nutrition_info.append(formatted_info)
+
+        # 로그 출력 시 각 항목을 명시적으로 구분
+        logger.info("All nutrition result:\n%s", "\n\n".join(all_nutrition_info))
 
         # 프롬프트 설정
         prompt = (
-            f"Here is a list of foods and their units: {food_items}.\n"
+            f"Here is a list of foods and their units: {json.dumps(food_items, ensure_ascii=False, indent=4)}.\n"
             "For each food, the unit is converted to grams and provided in a category called gram. Additionally, nutritional information is provided per 100g."
             "The original units should be preserved in the JSON output, reflecting the input format."
             "Additionally, use the following nutritional information retrieved from our database:\n"
-            + "\n".join(all_nutrition_info) + "\n"
+            + "\n\n".join(all_nutrition_info) + "\n"
             "Returns results strictly in JSON format:\n"
             '[{"food": "example_food", "unit": "example_unit", "gram": 100, '
             '"Calories": 100, "Carbohydrates": 100, '
@@ -63,14 +69,14 @@ def process_second_GPT_API():
             "Make sure the values are realistic and accurately reflect the nutritional content of each food item."
         )
 
-        gpt_response = rag_instance.generate_response_with_rag(prompt, food_names, gpt_api_key)
+        gpt_response = generate_response(prompt, gpt_api_key)
 
         # 백틱을 제거하고 JSON 파싱 시도
         gpt_response_cleaned = gpt_response.replace("```json", "").replace("```", "").strip()
         try:
             gpt_response_json = json.loads(gpt_response_cleaned)
             response_json = json.dumps({"data": gpt_response_json}, ensure_ascii=False, indent=4)
-            logger.info(f"Received response from OpenAI: {gpt_response}")
+            logger.info(f"Received response from OpenAI: \n{response_json}")
             return Response(response_json, mimetype='application/json')
         except json.JSONDecodeError:
             logger.error("Error converting response to JSON: No JSON object found in GPT response")

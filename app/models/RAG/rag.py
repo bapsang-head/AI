@@ -1,4 +1,5 @@
 import requests
+import logging
 from bs4 import BeautifulSoup
 from app.services.gpt_service import generate_response  # GPT 모델을 사용하기 위한 함수 임포트
 
@@ -35,29 +36,7 @@ class RAG:
             nutrition_data = self.extract_nutrition_info(response.text) 
             # 영양 정보를 문자열로 변환
             nutrition_info = [f"{name}: {', '.join(details)}" for name, details in nutrition_data]
-            # print(nutrition_info)
             return nutrition_info
         else:
             self.logger.error(f"FatSecret search error: {response.text}")  
             return []
-
-    def generate_response_with_rag(self, prompt, food_names, gpt_api_key):
-        # GPT 모델을 사용하여 RAG 방식으로 응답 생성
-        try:
-            # 1단계: 각 음식 이름에 대해 영양 정보 검색
-            all_nutrition_info = []
-            for food_name in food_names:
-                nutrition_info = self.search_nutrition_info(food_name)
-                if nutrition_info:
-                    all_nutrition_info.extend(nutrition_info)
-
-            # 2단계: 검색된 영양 정보를 프롬프트에 포함
-            augmented_prompt = prompt + "\n\n" + "\n".join(all_nutrition_info)
-
-            # 3단계: GPT 모델을 사용하여 응답 생성
-            response = generate_response(augmented_prompt, gpt_api_key)
-            return response
-
-        except Exception as e:
-            self.logger.error(f"Error in generating response with RAG: {e}")  
-            return str(e)
