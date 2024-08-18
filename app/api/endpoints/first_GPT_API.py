@@ -66,11 +66,7 @@ def process_NER():
             '모든 텍스트와 태그는 한국어로 반환하세요. 추가적인 설명이나 텍스트는 포함하지 마세요.'
         )
 
-<<<<<<< Updated upstream
-        gpt_response = generate_response(prompt, gpt_api_key)
-=======
         gpt_response = generate_response(prompt)  # API 키를 더 이상 전달하지 않음
->>>>>>> Stashed changes
         logging.info("GPT response: %s", gpt_response)
 
         # 백틱을 제거하고 JSON 파싱 시도

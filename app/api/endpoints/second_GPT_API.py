@@ -1,12 +1,9 @@
 from flask import Blueprint, request, jsonify, Response
 from app.services.gpt_service import generate_response
 from app.services.rate_limiter import RateLimiter 
-<<<<<<< Updated upstream
 from app.models.RAG.rag import RAG
-=======
 from dotenv import load_dotenv
 import os
->>>>>>> Stashed changes
 import json
 import logging
 
@@ -78,11 +75,7 @@ def process_second_GPT_API():
             "Make sure the values are realistic and accurately reflect the nutritional content of each food item."
         )
 
-<<<<<<< Updated upstream
-        gpt_response = generate_response(prompt, gpt_api_key)
-=======
         gpt_response = generate_response(prompt)  # API 키를 더 이상 전달하지 않음
->>>>>>> Stashed changes
 
         # 백틱을 제거하고 JSON 파싱 시도
         gpt_response_cleaned = gpt_response.replace("```json", "").replace("```", "").strip()
