@@ -2,6 +2,8 @@ from flask import Flask, Blueprint, request, jsonify, Response
 from app.services.ner_service import ner_model
 from app.services.gpt_service import generate_response
 from app.services.rate_limiter import RateLimiter 
+from dotenv import load_dotenv
+import os
 import json
 import logging
 import re
@@ -11,7 +13,11 @@ first_GPT_API_blueprint = Blueprint('first_GPT_API', __name__)
 
 logging.basicConfig(level=logging.INFO)
 
-# 하루에 최대 100회로 API 호출 제한을 초기화
+# .env 파일에서 환경 변수 로드
+load_dotenv()
+activate_key = os.getenv("ACTIVATE_KEY")
+
+# 하루에 최대 10회로 API 호출 제한을 초기화
 rate_limiter = RateLimiter(max_calls=10)
 
 @first_GPT_API_blueprint.route('/', methods=['POST'])
@@ -20,10 +26,10 @@ def process_NER():
     try:
         logging.info("Received request: %s", request.data)  # 요청 데이터 로그 추가
 
-        # API 키를 요청 헤더에서 가져오기
-        gpt_api_key = request.headers.get('GPT-API-KEY')
-        if not gpt_api_key:
-            return jsonify({"error": "Missing GPT API key in headers"}), 400
+        # 요청 헤더에서 키 가져오기
+        header_key = request.headers.get('ACTIVATE-KEY')
+        if not header_key or header_key != activate_key:
+            return jsonify({"error": "Invalid or missing activation key in headers"}), 403
 
         data = request.get_json(force=True)
         if not data or 'user_input' not in data:
@@ -60,7 +66,11 @@ def process_NER():
             '모든 텍스트와 태그는 한국어로 반환하세요. 추가적인 설명이나 텍스트는 포함하지 마세요.'
         )
 
+<<<<<<< Updated upstream
         gpt_response = generate_response(prompt, gpt_api_key)
+=======
+        gpt_response = generate_response(prompt)  # API 키를 더 이상 전달하지 않음
+>>>>>>> Stashed changes
         logging.info("GPT response: %s", gpt_response)
 
         # 백틱을 제거하고 JSON 파싱 시도

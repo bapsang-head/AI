@@ -1,7 +1,12 @@
 from flask import Blueprint, request, jsonify, Response
 from app.services.gpt_service import generate_response
 from app.services.rate_limiter import RateLimiter 
+<<<<<<< Updated upstream
 from app.models.RAG.rag import RAG
+=======
+from dotenv import load_dotenv
+import os
+>>>>>>> Stashed changes
 import json
 import logging
 
@@ -9,6 +14,10 @@ logger = logging.getLogger(__name__)
 rag_instance = RAG()
 
 second_GPT_API_blueprint = Blueprint('second_GPT_API', __name__)
+
+# .env 파일에서 환경 변수 로드
+load_dotenv()
+activate_key = os.getenv("ACTIVATE_KEY")
 
 # 하루에 최대 10회로 API 호출 제한을 초기화
 rate_limiter = RateLimiter(max_calls=10)
@@ -19,10 +28,10 @@ def process_second_GPT_API():
     try:
         logger.info(f"Received request: {request.data.decode('utf-8')}")
 
-        # API 키를 요청 헤더에서 가져오기
-        gpt_api_key = request.headers.get('GPT-API-KEY')
-        if not gpt_api_key:
-            return jsonify({"error": "Missing GPT API key in headers"}), 400
+        # 요청 헤더에서 키 가져오기
+        header_key = request.headers.get('ACTIVATE-KEY')
+        if not header_key or header_key != activate_key:
+            return jsonify({"error": "Invalid or missing activation key in headers"}), 403
 
         data = request.json
         if not data or 'data' not in data:
@@ -69,7 +78,11 @@ def process_second_GPT_API():
             "Make sure the values are realistic and accurately reflect the nutritional content of each food item."
         )
 
+<<<<<<< Updated upstream
         gpt_response = generate_response(prompt, gpt_api_key)
+=======
+        gpt_response = generate_response(prompt)  # API 키를 더 이상 전달하지 않음
+>>>>>>> Stashed changes
 
         # 백틱을 제거하고 JSON 파싱 시도
         gpt_response_cleaned = gpt_response.replace("```json", "").replace("```", "").strip()
