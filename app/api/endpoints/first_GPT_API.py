@@ -24,11 +24,11 @@ rate_limiter = RateLimiter(max_calls=10)
 @rate_limiter.limit_api_calls  # API 호출 제한 데코레이터 적용
 def process_NER():
     try:
-        logging.info("Received request: %s", request.data)  # 요청 데이터 로그 추가
-
         # 요청 헤더에서 키 가져오기
-        header_key = request.headers.get('ACTIVATE-KEY')
-        if not header_key or header_key != activate_key:
+        header_key = request.headers.get('ACTIVATE_KEY')
+
+        # 문자열 비교 전에 공백 제거 및 대소문자 무시 처리
+        if not header_key or header_key.strip().lower() != activate_key.strip().lower():
             return jsonify({"error": "Invalid or missing activation key in headers"}), 403
 
         data = request.get_json(force=True)
@@ -42,19 +42,9 @@ def process_NER():
         ner_result = ner_model(user_input)
         logging.info("NER result: %s", ner_result)
 
-        # ner_result가 list type이라 문자열로 변환
-        if not isinstance(ner_result, str):
-            ner_result = str(ner_result) if ner_result is not None else ''
-
-        # NER 결과를 파싱하여 필요한 정보 추출
-        matches = re.findall(r'\[(.+?):(.+?)\]', ner_result)
-        ner_result_parsed = [{"word": match[0], "tag": match[1]} for match in matches]
-        logging.info("Parsed NER result: %s", ner_result_parsed)
-
-        ner_result_str = ", ".join([f'{{"word": "{item["word"]}", "tag": "{item["tag"]}"}}' for item in ner_result_parsed])
         prompt = (
             f'입력 텍스트는 다음과 같습니다: "{user_input}".\n'
-            f'NER 출력 결과는 다음과 같습니다: [{ner_result_str}].\n'
+            f'NER 출력 결과는 다음과 같습니다: [{ner_result}].\n'
             '텍스트의 문맥을 고려하여 누락된 음식 항목, 수량 및 단위를 식별하세요. '
             '다음 규칙을 적용하여 추가 개체명 인식을 수행하세요:\n'
             '1. 문맥을 고려해서 개체명 인식을 수행해줘 예를 들면 "국수를 비벼"라는 표현은 "비빔국수"로 인식하고, "밥을 볶아"라는 표현은 "볶음밥"으로 인식하세요.\n'
@@ -66,7 +56,7 @@ def process_NER():
             '모든 텍스트와 태그는 한국어로 반환하세요. 추가적인 설명이나 텍스트는 포함하지 마세요.'
         )
 
-        gpt_response = generate_response(prompt)  # API 키를 더 이상 전달하지 않음
+        gpt_response = generate_response(prompt)
         logging.info("GPT response: %s", gpt_response)
 
         # 백틱을 제거하고 JSON 파싱 시도

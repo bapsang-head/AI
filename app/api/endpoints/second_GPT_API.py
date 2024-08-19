@@ -23,11 +23,11 @@ rate_limiter = RateLimiter(max_calls=10)
 @rate_limiter.limit_api_calls  # API 호출 제한 데코레이터 적용
 def process_second_GPT_API():
     try:
-        logger.info(f"Received request: {request.data.decode('utf-8')}")
-
         # 요청 헤더에서 키 가져오기
-        header_key = request.headers.get('ACTIVATE-KEY')
-        if not header_key or header_key != activate_key:
+        header_key = request.headers.get('ACTIVATE_KEY')
+
+        # 문자열 비교 전에 공백 제거 및 대소문자 무시 처리
+        if not header_key or header_key.strip().lower() != activate_key.strip().lower():
             return jsonify({"error": "Invalid or missing activation key in headers"}), 403
 
         data = request.json
@@ -44,10 +44,26 @@ def process_second_GPT_API():
                 "unit": data["data"][i + 1]["word"]
             })
 
-        # 음식 이름만 추출하여 리스트 생성
-        food_names = [item['food'] for item in food_items]
+        # 프롬프트 1: 각 음식의 단위를 gram으로 변환
+        prompt_gram = (
+            f"다음은 음식과 단위의 목록입니다: {json.dumps(food_items, ensure_ascii=False, indent=4)}.\n"
+            "각 음식의 단위를 gram으로 변환하세요.\n"
+            "JSON 형식으로 반환해 주세요:\n"
+            '[{"food": "예시_음식", "unit": "예시_단위", "gram": 100}].\n'
+            "추가적인 텍스트나 설명 없이, 유효한 JSON 배열로만 응답해 주세요."
+        )
 
-        # 영양 정보 검색 및 프롬프트에 추가
+        gpt_response_gram = generate_response(prompt_gram)
+
+        # 불필요한 줄바꿈이나 공백 제거
+        gpt_response_gram = gpt_response_gram.replace('\n', '').replace('\r', '').replace(' ', '')
+        logger.info("GPT response to gram:\n%s \n", gpt_response_gram)
+
+        # 음식 이름만 추출하여 리스트 생성
+        gram_data = json.loads(gpt_response_gram)
+        food_names = [item['food'] for item in gram_data]
+
+        # RAG를 사용해 각 음식의 영양 정보를 검색
         all_nutrition_info = []
         for food_name in food_names:
             nutrition_info = rag_instance.search_nutrition_info(food_name)
@@ -55,40 +71,58 @@ def process_second_GPT_API():
                 # 각 항목 사이에 줄바꿈과 공백 추가
                 cleaned_nutrition_info = [info.replace('\t', ' ').replace('\n', ' ').replace('\r', '').strip() for info in nutrition_info]
                 formatted_info = "\n".join(cleaned_nutrition_info)
-                all_nutrition_info.append(formatted_info)
-
-        # 로그 출력 시 각 항목을 명시적으로 구분
+                all_nutrition_info.append(f"{food_name}: {formatted_info}")
+        
         logger.info("All nutrition result:\n%s", "\n\n".join(all_nutrition_info))
 
-        # 프롬프트 설정
-        prompt = (
-            f"Here is a list of foods and their units: {json.dumps(food_items, ensure_ascii=False, indent=4)}.\n"
-            "For each food, the unit is converted to grams and provided in a category called gram. Additionally, nutritional information is provided per 100g."
-            "The original units should be preserved in the JSON output, reflecting the input format."
-            "Additionally, use the following nutritional information retrieved from our database:\n"
-            + "\n\n".join(all_nutrition_info) + "\n"
-            "Returns results strictly in JSON format:\n"
-            '[{"food": "example_food", "unit": "example_unit", "gram": 100, '
-            '"Calories": 100, "Carbohydrates": 100, '
-            '"Protein": 100, "Fat": 100}].\n'
-            "Please respond only as a valid JSON array, without any additional text or description."
-            "Make sure the values are realistic and accurately reflect the nutritional content of each food item."
+        # 프롬프트 2: 100g 기준으로 영양 성분 계산
+        prompt_nutrition = (
+            f"다음은 음식 목록입니다: {json.dumps(food_names, ensure_ascii=False, indent=4)}.\n"
+            "다음은 우리의 데이터베이스에서 검색된 다음 영양 정보를 참고하세요:\n" +
+            "\n".join(all_nutrition_info) + "\n"
+            "각 음식의 영양 정보를 100g 기준으로 계산하세요.\n"
+            "JSON 형식으로 반환해 주세요:\n"
+            '[{"food": "예시_음식", "Calories": 100, "Carbohydrates": 100, "Protein": 100, "Fat": 100}].\n'
+            "추가적인 텍스트나 설명 없이, 유효한 JSON 배열로만 응답해 주세요."
         )
 
-        gpt_response = generate_response(prompt)  # API 키를 더 이상 전달하지 않음
+        gpt_response_nutrition = generate_response(prompt_nutrition)
 
-        # 백틱을 제거하고 JSON 파싱 시도
-        gpt_response_cleaned = gpt_response.replace("```json", "").replace("```", "").strip()
+        # 불필요한 줄바꿈이나 공백 제거
+        gpt_response_nutrition = gpt_response_nutrition.replace('\n', '').replace('\r', '').replace(' ', '')
+        logger.info("\nGPT response to nutrition:\n%s", gpt_response_nutrition)
+
+        # JSON 파싱 및 병합
         try:
-            gpt_response_json = json.loads(gpt_response_cleaned)
-            response_json = json.dumps({"data": gpt_response_json}, ensure_ascii=False, indent=4)
-            logger.info(f"Received response from OpenAI: \n{response_json}")
+            nutrition_data = json.loads(gpt_response_nutrition)
+
+            # 병합된 결과 생성
+            combined_data = []
+            for gram_item in gram_data:
+                food_name = gram_item["food"]
+                matching_nutrition = next((item for item in nutrition_data if item["food"] == food_name), None)
+                if matching_nutrition:
+                    combined_entry = {
+                        "food": food_name,
+                        "unit": food_items["unit"],
+                        "gram": gram_item["gram"],
+                        "Calories": matching_nutrition["Calories"],
+                        "Carbohydrates": matching_nutrition["Carbohydrates"],
+                        "Protein": matching_nutrition["Protein"],
+                        "Fat": matching_nutrition["Fat"],
+                    }
+                    combined_data.append(combined_entry)
+
+            response_json = json.dumps({"data": combined_data}, ensure_ascii=False, indent=4)
+            logger.info(f"Final combined response: \n{response_json}")
             return Response(response_json, mimetype='application/json')
-        except json.JSONDecodeError:
-            logger.error("Error converting response to JSON: No JSON object found in GPT response")
+
+        except json.JSONDecodeError as e:
+            logger.error("Error converting response to JSON: %s", str(e))
             return jsonify({
                 "error": "Invalid JSON response from OpenAI",
-                "gpt_response": gpt_response_cleaned
+                "gpt_response_gram": gpt_response_gram,
+                "gpt_response_nutrition": gpt_response_nutrition
             }), 500
 
     except Exception as e:
