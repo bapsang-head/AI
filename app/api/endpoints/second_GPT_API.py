@@ -98,13 +98,14 @@ def process_second_GPT_API():
 
             # 병합된 결과 생성
             combined_data = []
-            for gram_item in gram_data:
+            for i, gram_item in enumerate(gram_data):
                 food_name = gram_item["food"]
+                unit_name = food_items[i]["unit"]  # 올바르게 unit 값을 가져옴
                 matching_nutrition = next((item for item in nutrition_data if item["food"] == food_name), None)
                 if matching_nutrition:
                     combined_entry = {
                         "food": food_name,
-                        "unit": food_items["unit"],
+                        "unit": unit_name,
                         "gram": gram_item["gram"],
                         "Calories": matching_nutrition["Calories"],
                         "Carbohydrates": matching_nutrition["Carbohydrates"],
