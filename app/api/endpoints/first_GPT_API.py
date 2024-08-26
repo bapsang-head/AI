@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 import os
 import json
 import logging
-import re
 
 app = Flask(__name__)
 first_GPT_API_blueprint = Blueprint('first_GPT_API', __name__)
@@ -16,21 +15,31 @@ logging.basicConfig(level=logging.INFO)
 # .env 파일에서 환경 변수 로드
 load_dotenv()
 activate_key = os.getenv("ACTIVATE_KEY")
+call_initialization_key = os.getenv("CALL_INITIALIZATION")  # 추가
 
-# 하루에 최대 10회로 API 호출 제한을 초기화
-rate_limiter = RateLimiter(max_calls=10)
+# 하루에 최대 500회로 API 호출 제한을 초기화
+rate_limiter = RateLimiter(max_calls=500, call_initialization_key=call_initialization_key)
 
 @first_GPT_API_blueprint.route('/', methods=['POST'])
-@rate_limiter.limit_api_calls  # API 호출 제한 데코레이터 적용
+@rate_limiter.limit_api_calls  # 데코레이터 적용
 def process_NER():
     try:
-        # 요청 헤더에서 키 가져오기
+        # 호출 초기화를 위한 헤더에서 키 가져오기
+        init_key = request.headers.get('CALL_INITIALIZATION')
+
+        # 호출 초기화 키 확인
+        if init_key and init_key.strip() == call_initialization_key.strip():
+            rate_limiter.reset_calls()  # 호출 횟수 초기화
+            return jsonify({"message": "API call count has been reset"}), 200
+
+        # 기존 키 확인 로직
         header_key = request.headers.get('ACTIVATE_KEY')
 
         # 문자열 비교 전에 공백 제거 및 대소문자 무시 처리
         if not header_key or header_key.strip().lower() != activate_key.strip().lower():
             return jsonify({"error": "Invalid or missing activation key in headers"}), 403
 
+        # API 호출 로직 (이 부분에서 호출 횟수 카운트가 이루어짐)
         data = request.get_json(force=True)
         if not data or 'user_input' not in data:
             logging.error("Invalid input: %s", data)
