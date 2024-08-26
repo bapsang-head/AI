@@ -17,8 +17,8 @@ load_dotenv()
 activate_key = os.getenv("ACTIVATE_KEY")
 call_initialization_key = os.getenv("CALL_INITIALIZATION")
 
-# 하루에 최대 2회로 API 호출 제한을 초기화
-rate_limiter = RateLimiter(max_calls=2, call_initialization_key=call_initialization_key)
+# 하루에 최대 500회로 API 호출 제한을 초기화
+rate_limiter = RateLimiter(max_calls=500, call_initialization_key=call_initialization_key)
 
 @second_GPT_API_blueprint.route('/', methods=['POST'])
 @rate_limiter.limit_api_calls  # 데코레이터 적용
