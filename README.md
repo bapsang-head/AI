@@ -7,6 +7,8 @@
     - 초기화 코드 넣었음
 - NER 모델 추가 완료 
     - 테스트 확인 완료
+- Second_GPT_API에서 음식은 하나만 받는다.
+- Second_GPT_API에서 float 형식으로 변경
 
 ## GPT model (app/models/GPT/init.py)
 - GPT model은 GPT 4o로 통일
@@ -71,9 +73,7 @@
     {
         "data": [
             {"word": "삽겹살", "tag": "FOOD"},
-            {"word": "인분", "tag": "UNIT"},
-            {"word": "볶음밥", "tag": "FOOD"},
-            {"word": "공기", "tag": "UNIT"},
+            {"word": "인분", "tag": "UNIT"}
         ]
     }
     ``` 
@@ -92,15 +92,6 @@
                 "carbohydrates": 0,
                 "protein": 21.7,
                 "fat": 47.5
-            },
-            {
-                "food": "볶음밥",
-                "unit": "공기",
-                "gram": 250,
-                "calories": 220,
-                "carbohydrates": 28,
-                "protein": 4.8,
-                "fat": 10
             }
         ]
     ``` 
