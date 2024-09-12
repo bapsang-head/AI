@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, Response
 from app.services.gpt_service import generate_response
-from app.services.rate_limiter import RateLimiter 
+from app.services.rate_limiter import RateLimiter
 from app.models.RAG.rag import RAG
 from dotenv import load_dotenv
 import os
@@ -61,7 +61,7 @@ def process_second_GPT_API():
             start_index = gpt_response_gram.find('{')
             end_index = gpt_response_gram.rfind('}') + 1
             gpt_response_gram = gpt_response_gram[start_index:end_index]
-            
+
             # JSON 파싱
             gram_data = json.loads(gpt_response_gram)
             if not isinstance(gram_data, dict) or not gram_data:
@@ -76,17 +76,22 @@ def process_second_GPT_API():
         nutrition_info = rag_instance.search_nutrition_info(food_name)
 
         if nutrition_info:
-            cleaned_nutrition_info = [info.replace('\t', ' ').replace('\n', ' ').replace('\r', '').strip() for info in nutrition_info]
-            formatted_info = "\n".join(cleaned_nutrition_info)
+            # 각 항목에 \n 추가 후 결합
+            cleaned_nutrition_info = [info.replace('\t', ' ').replace('\n', ' ').replace('\r', '').strip() + '\n' for info in nutrition_info]
+            formatted_info = "".join(cleaned_nutrition_info)
         else:
             logger.warning(f"No nutrition info found for {food_name}")
             return jsonify({"error": "No nutrition info found for food"}), 404
+
+        logger.info(f"rag info data: \n {formatted_info}")
 
         # 프롬프트 2: 100g 기준으로 영양 성분 계산
         prompt_nutrition = (
             f"음식: {food_name}.\n"
             "이 음식의 영양 정보를 100g 기준으로 계산하고 정확한 JSON 형식으로 반환하세요.\n"
             '형식: {"food": "음식이름", "Calories": 100, "Carbohydrates": 100, "Protein": 100, "Fat": 100}.\n'
+            "다음은 현재 최신 데이터 베이스에서 찾은 음식 영양 성분 데이터 입니다. 이를 참고하여 작성해주세요."
+            f"데이터 : {formatted_info}\n"
             "추가 설명 없이 유효한 JSON만 반환하세요."
         )
 
@@ -106,15 +111,26 @@ def process_second_GPT_API():
                 logger.error("Parsed nutrition_data is not a valid dict: %s", nutrition_data)
                 return jsonify({"error": "Invalid nutrition data format"}), 500
 
+            # 문자열을 float 타입으로 변환
+            try:
+                gram = float(gram_data.get('gram', '0'))
+                calories = float(nutrition_data.get('Calories', '0'))
+                carbohydrates = float(nutrition_data.get('Carbohydrates', '0'))
+                protein = float(nutrition_data.get('Protein', '0'))
+                fat = float(nutrition_data.get('Fat', '0'))
+            except ValueError as e:
+                logger.error("Error converting string to float: %s", e)
+                return jsonify({"error": "Invalid number format"}), 500
+
             # 병합된 결과 생성
             combined_entry = {
                 "food": gram_data["food"],
                 "unit": food_item["unit"],
-                "gram": gram_data["gram"],
-                "Calories": nutrition_data["Calories"],
-                "Carbohydrates": nutrition_data["Carbohydrates"],
-                "Protein": nutrition_data["Protein"],
-                "Fat": nutrition_data["Fat"],
+                "gram": gram,
+                "Calories": calories,
+                "Carbohydrates": carbohydrates,
+                "Protein": protein,
+                "Fat": fat,
             }
 
             response_json = json.dumps(combined_entry, ensure_ascii=False, indent=4)
