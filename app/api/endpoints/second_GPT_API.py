@@ -127,10 +127,10 @@ def process_second_GPT_API():
                 "food": gram_data["food"],
                 "unit": food_item["unit"],
                 "gram": gram,
-                "Calories": calories,
-                "Carbohydrates": carbohydrates,
-                "Protein": protein,
-                "Fat": fat,
+                "calories": calories,
+                "carbohydrates": carbohydrates,
+                "protein": protein,
+                "fat": fat,
             }
 
             response_json = json.dumps(combined_entry, ensure_ascii=False, indent=4)
