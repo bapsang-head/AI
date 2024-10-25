@@ -79,23 +79,34 @@ def process_second_GPT_API():
             # 각 항목에 \n 추가 후 결합
             cleaned_nutrition_info = [info.replace('\t', ' ').replace('\n', ' ').replace('\r', '').strip() + '\n' for info in nutrition_info]
             formatted_info = "".join(cleaned_nutrition_info)
+            logger.info(f"rag info data: \n {formatted_info}")
         else:
             logger.warning(f"No nutrition info found for {food_name}")
-            return jsonify({"error": "No nutrition info found for food"}), 404
-
-        logger.info(f"rag info data: \n {formatted_info}")
+            formatted_info = None  
+            logger.info(f"rag info data: {formatted_info}")
 
         # 프롬프트 2: 100g 기준으로 영양 성분 계산
-        prompt_nutrition = (
-            f"음식: {food_name}.\n"
-            "이 음식의 영양 정보를 100g 기준으로 계산하고 정확한 JSON 형식으로 반환하세요.\n"
-            '형식: {"food": "음식이름", "Calories": 100, "Carbohydrates": 100, "Protein": 100, "Fat": 100}.\n'
-            "다음은 현재 최신 데이터 베이스에서 찾은 음식 영양 성분 데이터 입니다. 이를 참고하여 작성해주세요."
-            f"데이터 : {formatted_info}\n"
-            "추가 설명 없이 유효한 JSON만 반환하세요."
-        )
+        if formatted_info != None:
+            prompt_nutrition = (
+                f"음식: {food_name}.\n"
+                "이 음식의 영양 정보를 100g 기준으로 계산하고 정확한 JSON 형식으로 반환하세요.\n"
+                '형식: {"food": "음식이름", "Calories": 100, "Carbohydrates": 100, "Protein": 100, "Fat": 100}.\n'
+                "다음은 현재 최신 데이터 베이스에서 찾은 음식 영양 성분 데이터 입니다. 이를 참고하여 작성해주세요."
+                f"데이터 : {formatted_info}\n"
+                "추가 설명 없이 유효한 JSON만 반환하세요."
+            )
+        else :
+            prompt_nutrition = (
+                f"음식: {food_name}.\n"
+                "이 음식의 영양 정보를 100g 기준으로 계산하고 정확한 JSON 형식으로 반환하세요.\n"
+                '형식: {"food": "음식이름", "Calories": 100, "Carbohydrates": 100, "Protein": 100, "Fat": 100}.\n'
+                "추가 설명 없이 유효한 JSON만 반환하세요."
+                "만약 영양정보를 찾을 수 없는 음식인 경우 다음 형식으로 출력한다."
+                '형식: {"food": "음식이름", "Calories": 0, "Carbohydrates": 0, "Protein": 0, "Fat": 0}.\n"'
+            )
 
         gpt_response_nutrition = generate_response(prompt_nutrition)
+        logger.info(f"gpt info data: {gpt_response_nutrition}")
 
         # 백틱과 불필요한 줄바꿈, 공백 제거
         gpt_response_nutrition = gpt_response_nutrition.replace('```json', '').replace('```', '').replace('\n', '').replace('\r', '').strip()
