@@ -50,6 +50,7 @@ def process_second_GPT_API():
             '형식: {"food": "음식이름", "unit": "단위", "gram": 100}.\n'
             "추가 설명 없이 유효한 JSON만 반환하세요."
         )
+        logger.info(f"prompt_gram : \n {prompt_gram}")
 
         gpt_response_gram = generate_response(prompt_gram)
 
@@ -101,8 +102,7 @@ def process_second_GPT_API():
                 "이 음식의 영양 정보를 100g 기준으로 계산하고 정확한 JSON 형식으로 반환하세요.\n"
                 '형식: {"food": "음식이름", "Calories": 100, "Carbohydrates": 100, "Protein": 100, "Fat": 100}.\n'
                 "추가 설명 없이 유효한 JSON만 반환하세요."
-                "만약 영양정보를 찾을 수 없는 음식인 경우 다음 형식으로 출력한다."
-                '형식: {"food": "음식이름", "Calories": 0, "Carbohydrates": 0, "Protein": 0, "Fat": 0}.\n"'
+                "항상 영양정보를 출력해야 한다."
             )
 
         gpt_response_nutrition = generate_response(prompt_nutrition)
