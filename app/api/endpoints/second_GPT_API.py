@@ -47,11 +47,14 @@ def process_second_GPT_API():
         prompt_gram = (
             f"음식과 단위는 다음과 같습니다: {json.dumps(food_item, ensure_ascii=False)}.\n"
             "이 음식의 단위를 gram으로 변환하고 정확한 JSON 형식으로 반환하세요.\n"
-            '형식: {"food": "음식이름", "unit": "단위", "gram": 100}.\n'
+            "만약 정확한 변환 값을 알 수 없을 경우, 유사한 음식 또는 추정 값을 사용해 대략적인 값을 제공하세요.\n"
+            '형식: {"food": "음식이름", "unit": "단위", "gram": "단위 변환 값"}.\n'
             "추가 설명 없이 유효한 JSON만 반환하세요."
         )
+        logger.info(f"prompt_gram : \n {prompt_gram}")
 
         gpt_response_gram = generate_response(prompt_gram)
+        logger.info(f"GPT respnse : \n {gpt_response_gram}")
 
         # 백틱과 불필요한 줄바꿈, 공백 제거
         gpt_response_gram = gpt_response_gram.replace('```json', '').replace('```', '').strip()
@@ -79,24 +82,37 @@ def process_second_GPT_API():
             # 각 항목에 \n 추가 후 결합
             cleaned_nutrition_info = [info.replace('\t', ' ').replace('\n', ' ').replace('\r', '').strip() + '\n' for info in nutrition_info]
             formatted_info = "".join(cleaned_nutrition_info)
+            logger.info(f"rag info data: \n {formatted_info}")
         else:
             logger.warning(f"No nutrition info found for {food_name}")
-            return jsonify({"error": "No nutrition info found for food"}), 404
-
-        logger.info(f"rag info data: \n {formatted_info}")
+            formatted_info = None  
+            logger.info(f"rag info data: {formatted_info}")
 
         # 프롬프트 2: 100g 기준으로 영양 성분 계산
-        prompt_nutrition = (
-            f"음식: {food_name}.\n"
-            "이 음식의 영양 정보를 100g 기준으로 계산하고 정확한 JSON 형식으로 반환하세요.\n"
-            '형식: {"food": "음식이름", "Calories": 100, "Carbohydrates": 100, "Protein": 100, "Fat": 100}.\n'
-            "다음은 현재 최신 데이터 베이스에서 찾은 음식 영양 성분 데이터 입니다. 이를 참고하여 작성해주세요."
-            f"데이터 : {formatted_info}\n"
-            "추가 설명 없이 유효한 JSON만 반환하세요."
-        )
+        if formatted_info != None:
+            prompt_nutrition = (
+                f"음식: {food_name}.\n"
+                "이 음식의 영양 정보를 100g 기준으로 계산하고 정확한 JSON 형식으로 반환하세요.\n"
+                '형식: {"food": "음식이름", "Calories": "칼로리", "Carbohydrates": "탄수화물", "Protein": "단백질", "Fat": "지방"}.\n'
+                '영양정보를 작성할 때는 숫자만 넣어라(단위를 제외한 값)'
+                "다음은 현재 최신 데이터 베이스에서 찾은 음식 영양 성분 데이터 입니다. 이를 참고하여 작성해주세요."
+                f"데이터 : {formatted_info}\n"
+                "추가 설명 없이 유효한 JSON만 반환하세요."
+            )
+        else :
+            prompt_nutrition = (
+                f"음식: {food_name}.\n"
+                "이 음식의 영양 정보를 100g 기준으로 계산하고 정확한 JSON 형식으로 반환하세요.\n"
+                '형식: {"food": "음식이름", "Calories": "칼로리", "Carbohydrates": "탄수화물", "Protein": "단백질", "Fat": "지방"}.\n'
+                '영양정보를 작성할 때는 숫자만 넣어라(단위를 제외한 값)\n'
+                '만약 정확한 변환 값을 알 수 없을 경우, 유사한 음식 또는 추정 값을 사용해 대략적인 값을 제공하세요.\n'
+                "추가 설명 없이 유효한 JSON만 반환하세요."
+                "항상 영양정보를 출력해야 한다.\n"
+            )
 
         gpt_response_nutrition = generate_response(prompt_nutrition)
-
+        logger.info(f"gpt info data: {gpt_response_nutrition}")
+        
         # 백틱과 불필요한 줄바꿈, 공백 제거
         gpt_response_nutrition = gpt_response_nutrition.replace('```json', '').replace('```', '').replace('\n', '').replace('\r', '').strip()
 
@@ -113,11 +129,11 @@ def process_second_GPT_API():
 
             # 문자열을 float 타입으로 변환
             try:
-                gram = float(gram_data.get('gram', '0'))
-                calories = float(nutrition_data.get('Calories', '0'))
-                carbohydrates = float(nutrition_data.get('Carbohydrates', '0'))
-                protein = float(nutrition_data.get('Protein', '0'))
-                fat = float(nutrition_data.get('Fat', '0'))
+                gram = float(gram_data.get('gram', '0') or 0)
+                calories = float(nutrition_data.get('Calories', '0') or 0)
+                carbohydrates = float(nutrition_data.get('Carbohydrates', '0') or 0)
+                protein = float(nutrition_data.get('Protein', '0') or 0)
+                fat = float(nutrition_data.get('Fat', '0') or 0)
             except ValueError as e:
                 logger.error("Error converting string to float: %s", e)
                 return jsonify({"error": "Invalid number format"}), 500
