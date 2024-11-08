@@ -48,6 +48,7 @@ def process_second_GPT_API():
             f"음식과 단위는 다음과 같습니다: {json.dumps(food_item, ensure_ascii=False)}.\n"
             "이 음식의 단위를 gram으로 변환하고 정확한 JSON 형식으로 반환하세요.\n"
             "만약 정확한 변환 값을 알 수 없을 경우, 유사한 음식 또는 추정 값을 사용해 대략적인 값을 제공하세요.\n"
+            '이때, 무조건 단위 변환 값을 float형태로만 출력해줘'
             '형식: {"food": "음식이름", "unit": "단위", "gram": "단위 변환 값"}.\n'
             "추가 설명 없이 유효한 JSON만 반환하세요."
         )
