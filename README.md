@@ -1,5 +1,4 @@
 # AI
-## 현재 진행 상황 (2024.11.04 기준)
 ## GPT model (app/models/GPT/init.py)
 - GPT model은 GPT 4o로 통일
 
